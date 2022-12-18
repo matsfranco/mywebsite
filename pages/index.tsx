@@ -5,10 +5,10 @@ import About from '../components/About'
 import Hero from '../components/Hero'
 import LinkTree from '../components/LinkTree'
 import Skills from '../components/Skills'
+import Menu from '../components/Menu'
 
 //import Projects from '../components/Projects'
 //import Experiences from '../components/Experiences'
-//import Menu from '../components/Menu'
 //import { Experience, PageInfo, Project, Social, Skill } from '../typings'
 import { getHeroInfo } from '../services/getHeroInfo'
 import { getSkills } from '../services/getSkills'
@@ -26,11 +26,14 @@ type Props = {
 const Home = ({heroInfo, skills}: Props) => {
   return (
     <>
+
     <div className='bg-[#212329] text-white h-screen snap-y snap-mandatory 
     overflow-x-hidden overflow-y-scroll z-0 scrollbar'>
       <Head>
         <title>Mateus Franco</title>
       </Head>
+
+      <Menu />
 
       <section id='hero' className='snap-center'>
         <Hero heroInfo={heroInfo}/>
