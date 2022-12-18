@@ -3,16 +3,16 @@ import { Cursor, useTypewriter } from 'react-simple-typewriter'
 import BackgroundCircles from './BackgroundCircles'
 import { motion } from "framer-motion"; 
 import Link from 'next/link';
-import { PageInfo } from '../typings';
+import { HeroInfo } from '../typings';
 
 type Props = {
-    pageInfo: PageInfo
+    heroInfo: HeroInfo
 }
 
-export default function Hero({ pageInfo }: Props) {
+export default function Hero({ heroInfo }: Props) {
     const [ text, count ] = useTypewriter({
         words: [
-            `Olá! Meu nome é Mateus`,
+            `Olá! Meu nome é ${heroInfo.name}`,
             'Salesforce', 
             'Embarcados', 
             'Astronomia',
@@ -36,11 +36,11 @@ export default function Hero({ pageInfo }: Props) {
         <BackgroundCircles />
         <img 
             className='relative rounded-full h-48 w-48 md:h-72 md:w-72 mx-auto object-cover border border-primary-red'
-            src={"teste.com.br"}
+            src={heroInfo.heroImage.url}
         />
         <div className='z-20'>
             <h2 className='text-base uppercase text-gray-400 mx-4 pt-4 pb-2 tracking-[8px]'>
-                {"Teste"}
+                {heroInfo.role}
             </h2>
             <h1 className='text-2xl md:text-3xl lg:text-4xl lg:mt-4 font-semibold scroll-px-10'>
                 <span className='mr-3'>{text}</span>
