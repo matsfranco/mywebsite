@@ -16,6 +16,5 @@ export const getSkills = async () => {
     `;
   
     const result = await request(graphqlAPI, query);
-    console.log("skills:"+JSON.stringify(result.skills))
     return result.skills;
   };
