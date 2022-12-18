@@ -34,6 +34,19 @@ export interface PageInfo extends SanityBody {
     profilePic: Image;
 }
 
+export interface HeroInfo {
+    id: string;
+    backgroundInformation: string;
+    heroImage: {
+        url: string;
+    };
+    profilePicture: {
+        url: string;
+    };
+    name: string;
+    role: string;
+}
+
 export interface Experience extends SanityBody {
     _type: "experience";
     dateStarted: date;
