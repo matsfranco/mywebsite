@@ -1,5 +1,4 @@
 import { request, gql } from 'graphql-request';
-import { createImportSpecifier } from 'typescript';
 
 
 export const getHeroInfo = async () => {

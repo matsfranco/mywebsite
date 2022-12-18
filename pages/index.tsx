@@ -4,13 +4,15 @@ import Head from 'next/head'
 import About from '../components/About'
 import Hero from '../components/Hero'
 import LinkTree from '../components/LinkTree'
+import Skills from '../components/Skills'
+
 //import Projects from '../components/Projects'
-//import Skills from '../components/Skills'
 //import Experiences from '../components/Experiences'
 //import Menu from '../components/Menu'
-import { Experience, PageInfo, Project, Social, Skill } from '../typings'
+//import { Experience, PageInfo, Project, Social, Skill } from '../typings'
 import { getHeroInfo } from '../services/getHeroInfo'
-import { HeroInfo } from "../typings"
+import { getSkills } from '../services/getSkills'
+import { HeroInfo,SkillDataType } from "../typings"
 //import { fetchExperiences } from '../utils/fetchExperiences'
 //import { fetchProjects } from '../utils/fetchProjects'
 //import { fetchSkills } from '../utils/fetchSkills'
@@ -18,10 +20,10 @@ import { HeroInfo } from "../typings"
 
 type Props = {
   heroInfo: HeroInfo;
+  skills: SkillDataType[];
 }
 
-const Home = ({heroInfo}: Props) => {
-  console.log(heroInfo.heroImage.url)
+const Home = ({heroInfo, skills}: Props) => {
   return (
     <>
     <div className='bg-[#212329] text-white h-screen snap-y snap-mandatory 
@@ -38,6 +40,10 @@ const Home = ({heroInfo}: Props) => {
         <About heroInfo={heroInfo}/>
       </section>
 
+      <section id='skills' className='snap-center'>
+        <Skills skills={skills}/>
+      </section>
+
       <section id='contact' className='snap-center'>
         <LinkTree />
       </section>
@@ -51,6 +57,7 @@ export default Home
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const heroInfo: HeroInfo = await getHeroInfo();
+  const skills: SkillDataType[] = await getSkills();
   //const experiences: Experience[] = await fetchExperiences();
   //const skills: Skill[] = await fetchSkills();
   //const projects: Project[] = await fetchProjects();
@@ -59,11 +66,11 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   return {
     props: {
       heroInfo,
-      //experiences,
+      skills
       //skills,
       //projects,
       //socials
     },
-    revalidate: 60,
+    revalidate: 300,
   };
 }
