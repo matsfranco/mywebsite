@@ -22,18 +22,6 @@ export interface Organization extends SanityBody {
     city: string;
 }
 
-export interface PageInfo extends SanityBody {
-    _type: "pageInfo";
-    address: string;
-    backgroundInformation: string;
-    email: string;
-    role: string;
-    heroImage: Image;
-    name: string;
-    phoneNumber: string;
-    profilePic: Image;
-}
-
 export interface HeroInfo {
     id: string;
     backgroundInformation: string;
@@ -45,6 +33,14 @@ export interface HeroInfo {
     };
     name: string;
     role: string;
+}
+
+export interface SkillDataType {
+    id: string;
+    name: string;
+    image: {
+        url: string;
+    };
 }
 
 export interface Experience extends SanityBody {
@@ -62,15 +58,6 @@ export interface Experience extends SanityBody {
 export interface Technology extends SanityBody {
     _type: "skill";
     image: Image;
-    progress: number;
-    title: string;
-}
-
-export interface Skill extends SanityBody {
-    _type: "skill";
-    image: Image;
-    group: string;
-    highlight: boolean;
     progress: number;
     title: string;
 }
