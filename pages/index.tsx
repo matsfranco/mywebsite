@@ -24,7 +24,6 @@ type Props = {
 }
 
 const Home = ({heroInfo, skills}: Props) => {
-  console.log(heroInfo.heroImage.url)
   return (
     <>
     <div className='bg-[#212329] text-white h-screen snap-y snap-mandatory 
@@ -71,7 +70,6 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
       //skills,
       //projects,
       //socials
-    },
-    revalidate: 1,
+    }
   };
 }

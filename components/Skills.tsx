@@ -28,7 +28,7 @@ function Skills({ skills }: Props) {
             {skills?.slice(0,skills.length/2).map((skill,i) => (
                 <Skill key={skill.id} skill={skill} directionLeft={true}/> 
             ))}
-            {skills?.slice(skills.length/2 + 1, skills.length)?.map((skill,i) => (
+            {skills?.slice(skills.length/2, skills.length)?.map((skill,i) => (
                 <Skill key={skill.id} skill={skill} directionLeft={false}/> 
             ))}
         </div>
