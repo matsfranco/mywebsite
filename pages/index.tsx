@@ -1,7 +1,7 @@
 import type { GetStaticProps,NextPage } from 'next'
 import Head from 'next/head'
 //import Link from 'next/link'
-//import About from '../components/About'
+import About from '../components/About'
 //import LinkTree from '../components/LinkTree'
 import Hero from '../components/Hero'
 //import Projects from '../components/Projects'
@@ -32,6 +32,9 @@ const Home = ({heroInfo}: Props) => {
 
       <section id='hero' className='snap-center'>
         <Hero heroInfo={heroInfo}/>
+      </section>
+      <section id='about' className='snap-center'>
+        <About heroInfo={heroInfo}/>
       </section>
 
 
