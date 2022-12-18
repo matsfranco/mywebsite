@@ -9,7 +9,7 @@ const pages = [
                     {name: 'Skills', slug: '#skills'},
                     {name: 'Projetos', slug: '#projects'},
                     {name: 'Contatos', slug: '#contact'},
-                    {name: 'Galeria Astronômica', slug: '/astronomical-galery'},     
+                    {name: 'Galeria Astronômica', slug: 'astronomic-galery'},     
                   ];
 
 export default function Menu() {
