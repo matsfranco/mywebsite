@@ -25,7 +25,7 @@ function Projects({ projects }: Props) {
             </h3>
             <div className='mt-0 md:mt-24 w-full flex space-x-4 overflow-x-scroll p-8 snap-x snap-mandatory scrollbar scrollbar-track-gray-300 scrollbar-thumb-primary-red/80'>
                 {projects?.map((project, i) => (
-                    <ProjectCard key={project._id} project={project} />
+                    <ProjectCard key={project.id} project={project} />
                 ))}
             </div>
         </motion.div>
