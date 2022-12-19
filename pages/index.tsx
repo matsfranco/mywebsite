@@ -7,14 +7,14 @@ import LinkTree from '../components/LinkTree'
 import Skills from '../components/Skills'
 import Menu from '../components/Menu'
 import Experiences from '../components/Experiences'
+import Projects from '../components/Projects'
 
-//import Projects from '../components/Projects'
 //import { Experience, PageInfo, Project, Social, Skill } from '../typings'
 import { getHeroInfo } from '../services/getHeroInfo'
 import { getSkills } from '../services/getSkills'
 import { getExperiences } from '../services/getExperiences'
-import { HeroInfo,SkillDataType,Experience } from "../typings"
-//import { fetchProjects } from '../utils/fetchProjects'
+import { getProjects } from '../services/getProjects'
+import { HeroInfo,SkillDataType,Experience,Project } from "../typings"
 //import { fetchSkills } from '../utils/fetchSkills'
 //import { fetchSocials } from '../utils/fetchSocials'
 
@@ -22,9 +22,10 @@ type Props = {
   heroInfo: HeroInfo;
   skills: SkillDataType[];
   experiences: Experience[];
+  projects: Project[];
 }
 
-const Home = ({heroInfo, skills, experiences}: Props) => {
+const Home = ({heroInfo, skills, experiences, projects}: Props) => {
   return (
     <>
 
@@ -52,6 +53,10 @@ const Home = ({heroInfo, skills, experiences}: Props) => {
         <Experiences experiences={experiences}/>
       </section>
 
+      <section id='projects'  className='snap-center'>
+        <Projects projects={projects}/>
+      </section>
+
       <section id='contact' className='snap-center'>
         <LinkTree />
       </section>
@@ -67,8 +72,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   const heroInfo: HeroInfo = await getHeroInfo();
   const skills: SkillDataType[] = await getSkills();
   const experiences: Experience[] = await getExperiences();
-  //const skills: Skill[] = await fetchSkills();
-  //const projects: Project[] = await fetchProjects();
+  const projects: Project[] = await getProjects();
   //const socials: Social[] = await fetchSocials();
 
   return {
@@ -76,9 +80,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
       heroInfo,
       skills,
       experiences,
-      //skills,
-      //projects,
-      //socials
+      projects
     },
     revalidate: 300,
   };

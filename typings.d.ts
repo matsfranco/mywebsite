@@ -60,24 +60,18 @@ export interface Organization {
 }
 
 
-export interface Technology extends SanityBody {
-    _type: "skill";
-    image: Image;
-    progress: number;
+export interface Project {
+    id: string
     title: string;
-}
-
-export interface Project extends SanityBody {
-    _type: "project";
-    title: string;
-    type: string;
-    institution: string;
-    image: Image;
-    linkToBuild: string;
-    summary: string;
-    year: number;
-    technologies: Technology[];
+    image: {
+        url;
+    }
     organization: Organization;
+    type: string;
+    department: string;
+    description: string;
+    skills: SkillDataType[];
+    year: number;
 }
 
 export interface Social extends SanityBody {
