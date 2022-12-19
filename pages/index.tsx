@@ -6,14 +6,14 @@ import Hero from '../components/Hero'
 import LinkTree from '../components/LinkTree'
 import Skills from '../components/Skills'
 import Menu from '../components/Menu'
+import Experiences from '../components/Experiences'
 
 //import Projects from '../components/Projects'
-//import Experiences from '../components/Experiences'
 //import { Experience, PageInfo, Project, Social, Skill } from '../typings'
 import { getHeroInfo } from '../services/getHeroInfo'
 import { getSkills } from '../services/getSkills'
-import { HeroInfo,SkillDataType } from "../typings"
-//import { fetchExperiences } from '../utils/fetchExperiences'
+import { getExperiences } from '../services/getExperiences'
+import { HeroInfo,SkillDataType,Experience } from "../typings"
 //import { fetchProjects } from '../utils/fetchProjects'
 //import { fetchSkills } from '../utils/fetchSkills'
 //import { fetchSocials } from '../utils/fetchSocials'
@@ -21,9 +21,10 @@ import { HeroInfo,SkillDataType } from "../typings"
 type Props = {
   heroInfo: HeroInfo;
   skills: SkillDataType[];
+  experiences: Experience[];
 }
 
-const Home = ({heroInfo, skills}: Props) => {
+const Home = ({heroInfo, skills, experiences}: Props) => {
   return (
     <>
 
@@ -47,6 +48,10 @@ const Home = ({heroInfo, skills}: Props) => {
         <Skills skills={skills}/>
       </section>
 
+      <section id='experience' className='snap-center'>
+        <Experiences experiences={experiences}/>
+      </section>
+
       <section id='contact' className='snap-center'>
         <LinkTree />
       </section>
@@ -61,7 +66,7 @@ export default Home
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const heroInfo: HeroInfo = await getHeroInfo();
   const skills: SkillDataType[] = await getSkills();
-  //const experiences: Experience[] = await fetchExperiences();
+  const experiences: Experience[] = await getExperiences();
   //const skills: Skill[] = await fetchSkills();
   //const projects: Project[] = await fetchProjects();
   //const socials: Social[] = await fetchSocials();
@@ -69,7 +74,8 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   return {
     props: {
       heroInfo,
-      skills
+      skills,
+      experiences,
       //skills,
       //projects,
       //socials

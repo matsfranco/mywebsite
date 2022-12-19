@@ -13,15 +13,6 @@ interface Image {
     };
 }
 
-export interface Organization extends SanityBody {
-    _type: "organization";
-    name: string;
-    logo: Image;
-    logoAlt: string;
-    url: string;
-    city: string;
-}
-
 export interface HeroInfo {
     id: string;
     backgroundInformation: string;
@@ -43,17 +34,31 @@ export interface SkillDataType {
     };
 }
 
-export interface Experience extends SanityBody {
-    _type: "experience";
-    dateStarted: date;
-    dateEnded: date;
+export interface Experience {
+    id: string;
+    startDate: date;
+    endDate: date;
     isCurrentlyWorkingHere: boolean;
     jobTitle: string;
-    points: string[];
-    technologies: Technology[];
+    description: string;
+    skills: SkillDataType[];
     organization: Organization;
-    image: Image;
+    image: {
+        url: string;
+    };
 }
+
+export interface Organization {
+    id;
+    name: string;
+    logo: {
+        url: string;
+    };
+    logoAlt: string;
+    url: string;
+    location: string;
+}
+
 
 export interface Technology extends SanityBody {
     _type: "skill";
