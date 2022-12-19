@@ -21,7 +21,7 @@ function Skills({ skills }: Props) {
             Skills
         </h3>
         <h3 className='absolute mx-2 top-36  text-gray-500 text-sm'>
-            Algumas habilidades que possui na área de tecnologia da informação e engenharia
+            Algumas das principais habilidades que possuo em tecnologia da informação e engenharia
         </h3>
         <div>
         <div className='grid grid-cols-4 gap-4 md:grid-cols-4 md:gap-5 xl:grid-cols-5 xl:gap-10 bg-black bg-opacity-30 p-4 rounded-lg'>
