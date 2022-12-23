@@ -5,6 +5,7 @@ import Menu from '../components/Menu';
 import Gallery from '../components/Gallery';
 import { createClient } from '@supabase/supabase-js';
 import type { GetStaticProps } from 'next'
+import  { ImageData } from '../typings';
 
 type Props = {
     images: ImageData[];
