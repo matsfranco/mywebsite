@@ -1,6 +1,9 @@
 import Image from 'next/image';
 import React, {useState} from 'react';
 import  { ImageData } from '../typings';
+import Modal from 'react-modal';
+import GalleryItemFull from './GalleryItemFull';
+
 
 function cn(...classes: string[]) {
     return classes.filter(Boolean).join(' ');
@@ -8,10 +11,22 @@ function cn(...classes: string[]) {
   
 export default function GalleryImage( {image} : { image : ImageData } ) {
     const [isLoading, setLoading] = useState(true);
+    const [modalIsOpen, setIsOpen] = useState(false)
+
+    function openModal() {
+      console.log('openModal')
+      setIsOpen(true)
+    }
+
+    function closeModal() {
+      console.log('closeModal')
+      setIsOpen(false)
+    }
+
     return(
       <>
         <a href="#" className="group">
-          <div className="aspect-w-1 aspect-h-1 xl:aspect-w-7 xl:aspect-h-8 w-full overflow-hidden rounded-lg bg-gray-200">
+          <div className="aspect-w-4 aspect-h-3 overflow-hidden rounded-lg bg-secondary-grey" onClick={openModal}>
             <Image
               alt=""
               src={image?.href}
@@ -26,8 +41,23 @@ export default function GalleryImage( {image} : { image : ImageData } ) {
               onLoadingComplete={() => setLoading(false)}
             />
           </div>
-          <h3 className="mt-4 text-sm text-gray-700">{image?.name}</h3>
-          <p className="mt-1 text-lg font-medium text-gray-900">{image?.name}</p>
+          <h3 className="mt-4 text-sm text-white">{image?.name}</h3>
+          <p className="mt-1 text-lg font-medium text-white">{image?.name}</p>
+          <div onClick={closeModal}>
+            <Modal
+              isOpen={modalIsOpen}
+              onRequestClose={closeModal}
+              contentLabel='teste'
+              overlayClassName='modal-overlay bg-secondary-grey '
+              className='w-[90%] max-w-[1200px] m-12'
+            >
+                <div>
+                  <GalleryItemFull  image={image} />
+                  <button className='text-md text-bold text-white' onClick={closeModal}>Fechar</button>
+                </div>        
+            </Modal>
+          </div>
+          
         </a>
       </>
     );
