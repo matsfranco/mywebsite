@@ -13,7 +13,6 @@ type Props = {
 
 
 const AstronomicGalery = ( {images} : Props) => {
-    console.log(images)
     return (
       <>
         <Head>
