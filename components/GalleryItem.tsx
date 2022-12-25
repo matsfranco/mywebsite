@@ -52,8 +52,8 @@ export default function GalleryImage( {image} : { image : ImageData } ) {
               className='w-[90%] max-w-[1200px] m-12'
             >
                 <div>
+                  <button className='text-md text-bold text-white text-justify-left' onClick={closeModal}>Fechar</button>
                   <GalleryItemFull  image={image} />
-                  <button className='text-md text-bold text-white' onClick={closeModal}>Fechar</button>
                 </div>        
             </Modal>
           </div>
