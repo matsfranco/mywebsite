@@ -21,7 +21,9 @@ const AstronomicGalery = ( {images} : Props) => {
         <div className='bg-secondary-grey text-white h-screen snap-y snap-mandatory 
         overflow-x-hidden overflow-y-scroll z-0 scrollbar-thin scrollbar-track-gray-300 scrollbar-thumb-primary-red/80'>
             <Menu />
-            <Gallery images={images} />
+            <div>
+                <Gallery images={images} />
+            </div>
         </div>
             </>
     );
@@ -34,7 +36,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
         process.env.NEXT_PUBLIC_SUPABASE_URL || '',
         process.env.SUPABASE_SERVICE_ROLE_KEY || ''
     )
-    const { data, error} = await supabaseAdmin.from('astro-image').select('*').order('id')  
+    const { data, error} = await supabaseAdmin.from('astro-image').select('*').order('id').eq('show','true').order('date', { ascending: false })
     const images = data as ImageData[];
     return {
         props: {

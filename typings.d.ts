@@ -5,6 +5,12 @@ export interface ImageData {
     type: string;
     description: string;
     created_at: date;
+    date: date;
+    softwares: string;
+    ota: string;
+    weather: string;
+    object: string;
+    cameras: string;
 }
 
 export interface HeroInfo {

@@ -3,6 +3,7 @@ import React, {useState} from 'react';
 import  { ImageData } from '../typings';
 import Modal from 'react-modal';
 import GalleryItemFull from './GalleryItemFull';
+import moment from 'moment';
 
 
 function cn(...classes: string[]) {
@@ -42,7 +43,7 @@ export default function GalleryImage( {image} : { image : ImageData } ) {
             />
           </div>
           <h3 className="mt-4 text-sm text-white">{image?.name}</h3>
-          <p className="mt-1 text-lg font-medium text-white">{image?.name}</p>
+          <p className="mt-1 text-xs text-white">{moment(image?.date).format('MMM/YYYY')}</p>         
           <div onClick={closeModal}>
             <Modal
               isOpen={modalIsOpen}

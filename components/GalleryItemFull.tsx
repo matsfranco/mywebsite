@@ -1,3 +1,4 @@
+import moment from 'moment';
 import Image from 'next/image';
 import React, {useState} from 'react';
 import  { ImageData } from '../typings';
@@ -21,8 +22,13 @@ export default function GalleryImageFull( {image} : { image : ImageData } ) {
               onLoadingComplete={() => setLoading(false)}
             />
           </div>
-          <h3 className="mt-4 text-bold text-white">{image?.name}</h3>
-          <p className="mt-1 text-xs text-white">{image?.description}</p>
+          <h3 className="mt-4 mx-4 text-medium text-bold text-white">{image?.name}</h3>
+          <p className="mt-2 mx-4 text-xs text-white">{moment(image.date).format('DD/MMM/YYYY')}</p>         
+          <p className="mt-2 mx-4 text-xs text-white"><b>Objeto: </b>{image?.object}</p>
+          <p className="mt-2 mx-4 text-xs text-white"><b>OTA: </b>{image?.ota}</p>
+          <p className="mt-2 mx-4 text-xs text-white"><b>Câmeras: </b>{image?.cameras}</p>
+          <p className="mt-2 mx-4 text-xs text-white"><b>Softwares: </b>{image?.softwares}</p>
+          <p className="mt-2 mx-4 text-xs text-white">{image?.description}</p>
         </a>
       </>
     );
