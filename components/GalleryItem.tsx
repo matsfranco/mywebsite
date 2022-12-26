@@ -26,15 +26,15 @@ export default function GalleryImage( {image} : { image : ImageData } ) {
 
     return(
       <>
-        <a href="#" className="group">
-          <div className="aspect-w-4 aspect-h-3 overflow-hidden rounded-lg bg-secondary-grey" onClick={openModal}>
+        <div className="">
+          <div className="w-[15em] aspect-w-4 aspect-h-3 rounded bg-secondary-grey" onClick={openModal}>
             <Image
               alt=""
               src={image?.href}
               objectFit="cover"
               layout="fill" 
               className={cn(
-                'group-hover:opacity-75 duration-700 easy-in-out',
+                'group-hover:opacity-75 duration-700 easy-in-out rounded-lg',
                 isLoading
                   ? 'grayscale blur-2xl scale-110'
                   : 'grayscale-0 blur-0 scale-100'
@@ -42,8 +42,14 @@ export default function GalleryImage( {image} : { image : ImageData } ) {
               onLoadingComplete={() => setLoading(false)}
             />
           </div>
-          <h3 className="mt-4 text-sm text-white">{image?.name}</h3>
-          <p className="mt-1 text-xs text-white">{moment(image?.date).format('MMM/YYYY')}</p>         
+          <div className='bg-black bg-opacity-40 mt-2 py-1 rounded text-center'>
+          <div className='mx-2 border-b border-primary-red'>            
+            <h3 className="text-sm text-white">{image?.name}</h3>
+          </div>
+          <div className=''>
+            <p className="mx-2 mt-1 text-xs text-white">{moment(image?.date).format('MMM/YYYY')}</p>  
+          </div>
+          </div>       
           <div onClick={closeModal}>
             <Modal
               isOpen={modalIsOpen}
@@ -58,8 +64,7 @@ export default function GalleryImage( {image} : { image : ImageData } ) {
                 </div>        
             </Modal>
           </div>
-          
-        </a>
+        </div>
       </>
     );
 }

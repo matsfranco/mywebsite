@@ -16,14 +16,14 @@ const AstronomicGalery = ( {images} : Props) => {
     return (
       <>
         <Head>
-            <title>Mateus Franco</title>
+            <title>MF | Galeria Astronômica</title>
         </Head>
         <div className='bg-secondary-grey text-white h-screen snap-y snap-mandatory 
-        overflow-x-hidden overflow-y-scroll z-0 scrollbar-thin scrollbar-track-gray-300 scrollbar-thumb-primary-red/80'>
+    overflow-x-hidden overflow-y-scroll z-0 scrollbar-thin scrollbar-track-gray-300 scrollbar-thumb-primary-red/80'>
             <Menu />
-            <div>
+            <section id='astro-gallery'>
                 <Gallery images={images} />
-            </div>
+            </section>
         </div>
             </>
     );
