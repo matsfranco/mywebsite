@@ -28,12 +28,12 @@ export default function GalleryImageFull( {image} : { image : ImageData } ) {
                 <h3 className="mt-4 mx-4 text-medium text-bold text-white">{image?.name}</h3>
               </div>
               <div className='mx-6'>
-                <p className="mt-2 text-sm text-white"><b>Data: </b>{moment(image.date).format('DD/MMM/YYYY')}</p>         
-                <p className="mt-2 text-sm text-white"><b>Objeto: </b>{image?.object}</p>
-                <p className="mt-2 text-sm text-white"><b>OTA: </b>{image?.ota}</p>
-                <p className="mt-2 text-sm text-white"><b>Câmeras: </b>{image?.cameras}</p>
-                <p className="mt-2 text-sm text-white"><b>Softwares: </b>{image?.softwares}</p>
-                <p className="mt-2 text-sm text-white">{image?.description}</p>
+                <p className="mt-2 text-sm text-white text-justify"><b>Data: </b>{moment(image.date).format('DD/MMM/YYYY')}</p>         
+                <p className="mt-2 text-sm text-white text-justify"><b>Objeto: </b>{image?.object}</p>
+                <p className="mt-2 text-sm text-white text-justify"><b>OTA: </b>{image?.ota}</p>
+                <p className="mt-2 text-sm text-white text-justify"><b>Câmeras: </b>{image?.cameras}</p>
+                <p className="mt-2 text-sm text-white text-justify"><b>Softwares: </b>{image?.softwares}</p>
+                <p className="mt-2 text-sm text-white text-justify">{image?.description}</p>
               </div>
             </div>
           </div>
