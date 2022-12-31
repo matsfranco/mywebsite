@@ -1,28 +1,47 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link'
 import Head from 'next/head'
-import Footer from '../components/Footer'
-import UnderDevelopment from '../components/UnderDevelopment';
 import Menu from '../components/Menu';
+import Gallery from '../components/Gallery';
+import { createClient } from '@supabase/supabase-js';
+import type { GetStaticProps } from 'next'
+import  { ImageData } from '../typings';
 
-const AstronomicGalery = () => {
+type Props = {
+    images: ImageData[];
+}
+
+
+const AstronomicGalery = ( {images} : Props) => {
     return (
       <>
         <Head>
-            <title>Mateus Franco</title>
+            <title>MF | Galeria Astronômica</title>
         </Head>
         <div className='bg-secondary-grey text-white h-screen snap-y snap-mandatory 
-        overflow-x-hidden overflow-y-scroll z-0 scrollbar'>
+    overflow-x-hidden overflow-y-scroll z-0 scrollbar-thin scrollbar-track-gray-300 scrollbar-thumb-primary-red/80'>
             <Menu />
-            <div className='my-36'>
-                <UnderDevelopment />
-            </div>
-            <div>
-                <Footer />
-            </div>
+            <section id='astro-gallery'>
+                <Gallery images={images} />
+            </section>
         </div>
             </>
     );
 }
 
 export default AstronomicGalery
+
+export const getStaticProps: GetStaticProps<Props> = async () => {
+    const supabaseAdmin = createClient(
+        process.env.NEXT_PUBLIC_SUPABASE_URL || '',
+        process.env.SUPABASE_SERVICE_ROLE_KEY || ''
+    )
+    const { data, error} = await supabaseAdmin.from('astro-image').select('*').order('id').eq('show','true').order('date', { ascending: false })
+    const images = data as ImageData[];
+    return {
+        props: {
+            images
+        },
+        revalidate: 300,
+    }
+  }

@@ -1,16 +1,16 @@
-interface SanityBody {
-    _createdAte: string;
-    _id: string;
-    _rev: string;
-    _updatedAt: string;
-}
-
-interface Image {
-    _type: "image";
-    asset: {
-        _ref: string;
-        _type: "reference"
-    };
+export interface ImageData { 
+    id: number;
+    name: string;
+    href: string;
+    type: string;
+    description: string;
+    created_at: date;
+    date: date;
+    softwares: string;
+    ota: string;
+    weather: string;
+    object: string;
+    cameras: string;
 }
 
 export interface HeroInfo {
@@ -72,12 +72,6 @@ export interface Project {
     description: string;
     skills: SkillDataType[];
     year: number;
-}
-
-export interface Social extends SanityBody {
-    _type: "social"
-    title: string;
-    url: string;
 }
 
 interface Milestone {

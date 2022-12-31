@@ -29,8 +29,8 @@ const Home = ({heroInfo, skills, experiences, projects}: Props) => {
   return (
     <>
 
-    <div className='bg-[#212329] text-white h-screen snap-y snap-mandatory 
-    overflow-x-hidden overflow-y-scroll z-0  scrollbar-thin scrollbar-track-gray-300 scrollbar-thumb-primary-red/80'>
+    <div className='bg-secondary-grey text-white h-screen snap-y snap-mandatory 
+    overflow-x-hidden overflow-y-scroll z-0 scrollbar-thin scrollbar-track-gray-300 scrollbar-thumb-primary-red/80'>
       <Head>
         <title>Mateus Franco</title>
       </Head>
