@@ -43,12 +43,12 @@ export default function GalleryImage( {image} : { image : ImageData } ) {
             />
           </div>
           <div className='bg-black bg-opacity-40 mt-2 py-1 rounded text-center'>
-          <div className='mx-2 border-b border-primary-red'>            
-            <h3 className="text-sm text-white">{image?.name}</h3>
-          </div>
-          <div className=''>
-            <p className="mx-2 mt-1 text-xs text-white">{moment(image?.date).format('MMM/YYYY')}</p>  
-          </div>
+            <div className='mx-2 border-b border-primary-red'>            
+              <h3 className="text-sm text-white">{image?.name}</h3>
+            </div>
+            <div className=''>
+              <p className="mx-2 mt-1 text-xs text-white">{moment(image?.date).format('DD/MMM/YYYY')}</p>  
+            </div>
           </div>       
           <div onClick={closeModal}>
             <Modal
@@ -56,7 +56,7 @@ export default function GalleryImage( {image} : { image : ImageData } ) {
               onRequestClose={closeModal}
               contentLabel='teste'
               overlayClassName='modal-overlay bg-secondary-grey '
-              className='w-[90%] max-w-[1200px] m-12'
+              className='w-[100%] max-w-[1200px] m-6'
             >
                 <div>
                   <button className='text-md text-bold text-white text-justify-left' onClick={closeModal}>Fechar</button>
