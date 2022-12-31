@@ -12,8 +12,8 @@ export default function GalleryImageFull( {image} : { image : ImageData } ) {
     return(
       <>
         <a href="#" className="group">
-          <div className='grid grid-cols-1 md:grid-cols-3 w-[100%]'>
-            <div className="col-span-1 md:col-span-2 aspect-w-4 aspect-h-3 xl:aspect-w-4 xl:aspect-h-3 overflow-hidden rounded-lg">
+          <div className='grid grid-cols-1 md:grid-cols-4 w-[100%]'>
+            <div className="col-span-1 md:col-span-3 aspect-w-4 aspect-h-3 xl:aspect-w-4 xl:aspect-h-3 overflow-hidden rounded-lg">
               <Image
                 alt=""
                 src={image?.href}
