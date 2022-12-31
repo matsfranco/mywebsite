@@ -41,6 +41,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
     return {
         props: {
             images
-        }
+        },
+        revalidate: 300,
     }
   }
