@@ -95,3 +95,8 @@ interface TimeLineItem {
     description: string;
     itemImage: string;
 }
+
+export interface TitleData {
+    title: string;
+    subtitle: string;
+}

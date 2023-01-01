@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link'
 import Head from 'next/head'
 import Menu from '../components/Menu';
-import Gallery from '../components/Gallery';
+import ImageGrid from '../components/ImageGrid';
 import { createClient } from '@supabase/supabase-js';
 import type { GetStaticProps } from 'next'
 import  { ImageData } from '../typings';
@@ -22,7 +22,7 @@ const AstronomicGalery = ( {images} : Props) => {
     overflow-x-hidden overflow-y-scroll z-0 scrollbar-thin scrollbar-track-gray-300 scrollbar-thumb-primary-red/80'>
             <Menu />
             <section id='astro-gallery'>
-                <Gallery images={images} />
+                <ImageGrid images={images} />
             </section>
         </div>
             </>
