@@ -62,8 +62,8 @@ export default function Hero({ heroInfo }: Props) {
                 <Link href='#contact'>
                     <button className='heroButton'>Contatos</button>
                 </Link>
-                <Link href='/astronomic-galery'>
-                    <button className='heroButton'>Galeria Astronômica</button>
+                <Link href='/astronomy'>
+                    <button className='heroButton'>Astronomia</button>
                 </Link>
             </div>
         </div>
