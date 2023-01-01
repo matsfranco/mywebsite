@@ -75,10 +75,10 @@ export default function Hero({ heroInfo }: Props) {
             </div>
             <div className='mt-8 grid grid-cols-2 place-items-center'>
                 <Link href='/astronomy'>
-                    <button className='heroButton'>Astronomia</button>
+                    <button className='heroHighlight'>Astronomia</button>
                 </Link>
                 <Link href='/engineering'>
-                    <button className='heroButton'>Engenharia</button>
+                    <button className='heroHighlight'>Engenharia</button>
                 </Link>
             </div>
         </div>

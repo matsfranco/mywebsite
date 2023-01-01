@@ -5,8 +5,12 @@
 @layer components {
     .heroButton {
         @apply px-2 md:px-6 py-2 border border-[#242424] rounded-full uppercase text-xs md:text-base 
-        tracking-widest text-gray-400 transition-all hover:border-[#E5383B]/80 
-         hover:text-[#E5383B]/80 hover:font-bold
+        tracking-widest text-gray-400 transition-all hover:border-[#E5383B] 
+         hover:text-[#E5383B] hover:font-bold
+    }
+
+    .heroHighlight {
+        @apply col-span-1 h-12 flex items-center transition hover:-translate-y-1 hover:bg-primary-red duration-300 inline-block bg-secondary-grey border border-secondary-grey text-lg font-medium rounded rounded-full text-white p-4 cursor-pointer noselect 
     }
 
     .contactInput {

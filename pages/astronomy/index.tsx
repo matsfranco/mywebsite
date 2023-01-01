@@ -20,6 +20,9 @@ const Astronomy = () => {
             <Menu />
             <PageTitle titleData={pageTitle}/>
             <section id='astro-gallery'>
+                <div className='min-h-screen flex relative flex-col text-center md:text-left
+                    max-w-[2000px] justify-center mx-auto items-center
+                    xl:flex-row xl:px-10 xl:space-y-0'>
                 <div className="grid place-items-center">
                     <div className="ml-8 grid grid-cols-1 gap-4">
                         <div className="col-span-1 h-16 flex items-center transition hover:-translate-y-1 hover:bg-primary-red duration-300 inline-block bg-secondary-grey border border-secondary-grey text-lg font-medium rounded rounded-full text-white p-4 cursor-pointer noselect ">
@@ -30,6 +33,8 @@ const Astronomy = () => {
                             </Link>
                         </div>
                     </div>
+                </div>
+                
                 </div>
             </section>
         </div>
