@@ -9,7 +9,8 @@ const pages = [
                     {name: 'Skills', slug: '#skills'},
                     {name: 'Projetos', slug: '#projects'},
                     {name: 'Contatos', slug: '#contact'},
-                    {name: 'Astronomia', slug: 'astronomy'},     
+                    {name: 'Astronomia', slug: 'astronomy'},  
+                    {name: 'Engenharia', slug: 'engineering'},    
                   ];
 
 export default function Menu() {
