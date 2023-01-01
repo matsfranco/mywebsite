@@ -47,6 +47,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
     )
     const { data, error} = await supabaseAdmin.from('astro-image').select('*').order('id').eq('show','true').order('date', { ascending: false })
     const images = data as ImageData[];
+    console.log(images)
     return {
         props: {
             images
