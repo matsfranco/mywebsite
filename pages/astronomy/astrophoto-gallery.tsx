@@ -5,7 +5,6 @@ import { createClient } from '@supabase/supabase-js';
 import type { GetStaticProps } from 'next'
 import  { ImageData } from '../../typings';
 import ImageCard from '../../components/ImageCard';
-import ImageSearch from '../../components/ImageSearch';
 import PageTitle from '../../components/PageTitle';
 import moment from 'moment';
 
@@ -45,6 +44,14 @@ const AstrophotoGalery = ( {images} : Props) => {
                         </div>
                     </form>                
                 </div>
+                
+                {filtered.length === 0 && 
+                    <div className='h-screen'>
+
+                        <p>Nenhuma imagem encontrada...</p>
+                        <p>Talvez esta imagem não exista na minha galeria ou o termo não foi digitado corretamente.</p>
+                    </div>
+                }
                 <div className='grid grid-cols-1 md:grid-cols-4 gap-4'>
                     {filtered.map((image) => (
                         <ImageCard key={image.id} image={image}/>

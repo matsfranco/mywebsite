@@ -23,7 +23,7 @@
         @apply absolute top-12 uppercase font-semibold tracking-[10px] text-white text-2xl border-b border-primary-red pl-2 pb-1
     }
     .sectionSubtitle {
-        @apply absolute mx-2 top-24  text-gray-500 text-sm
+        @apply absolute mx-2 top-24 text-gray-500 text-sm
     }
     
     .noselect {

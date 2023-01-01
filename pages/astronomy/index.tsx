@@ -19,7 +19,7 @@ const Astronomy = () => {
     overflow-x-hidden overflow-y-scroll z-0 scrollbar-thin scrollbar-track-gray-300 scrollbar-thumb-primary-red/80'>
             <Menu />
             <PageTitle titleData={pageTitle}/>
-            <section id='astro-gallery'>
+            <section id='astro-items'>
                 <div className='min-h-screen flex relative flex-col text-center md:text-left
                     max-w-[2000px] justify-center mx-auto items-center
                     xl:flex-row xl:px-10 xl:space-y-0'>
