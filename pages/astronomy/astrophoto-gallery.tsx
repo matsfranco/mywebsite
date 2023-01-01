@@ -52,7 +52,7 @@ const AstrophotoGalery = ( {images} : Props) => {
                         <p>Talvez esta imagem não exista na minha galeria ou o termo não foi digitado corretamente.</p>
                     </div>
                 }
-                <div className='grid grid-cols-1 md:grid-cols-4 gap-4'>
+                <div className='grid grid-cols-1 md:grid-cols-3 gap-4'>
                     {filtered.map((image) => (
                         <ImageCard key={image.id} image={image}/>
                     ))}

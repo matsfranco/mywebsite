@@ -2,7 +2,7 @@ import Image from 'next/image';
 import React, {useState} from 'react';
 import  { ImageData } from '../typings';
 import Modal from 'react-modal';
-import GalleryItemFull from './GalleryItemFull';
+import GalleryItemFull from './ImageCardModal';
 import moment from 'moment';
 
 
