@@ -6,7 +6,7 @@ import PageTitle from '../../components/PageTitle';
 
 const pageTitle = {
     title: "Astronomia",
-    subtitle: "Galeria de astrofotografias de minha autoria. Você pode clicar nas imagens para ampliá-las e ver detalhes sobre as fotos."
+    subtitle: "Aqui você encontrará vários assuntos que fazem parte da minha carreira de Astronomo Amador como informações sobre equipamentos, projetos, publicações e astrofotografias."
 }
 
 const Astronomy = () => {
@@ -20,6 +20,7 @@ const Astronomy = () => {
             <Menu />
             <PageTitle titleData={pageTitle}/>
             <section id='astro-gallery'>
+
             </section>
         </div>
             </>
