@@ -11,6 +11,7 @@ export interface ImageData {
     weather: string;
     object: string;
     cameras: string;
+    tags: string;
 }
 
 export interface HeroInfo {

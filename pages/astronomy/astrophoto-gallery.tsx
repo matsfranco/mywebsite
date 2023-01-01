@@ -6,30 +6,39 @@ import ImageGrid from '../../components/ImageGrid';
 import { createClient } from '@supabase/supabase-js';
 import type { GetStaticProps } from 'next'
 import  { ImageData } from '../../typings';
+import ImageCard from '../../components/ImageCard';
+import PageTitle from '../../components/PageTitle';
+import moment from 'moment';
 
 type Props = {
     images: ImageData[];
 }
 
+const pageTitle = {
+    title: "Galeria de Astrofotografias",
+    subtitle: "Galeria de astrofotografias de minha autoria. Você pode clicar nas imagens para ampliá-las e ver detalhes sobre as fotos."
+}
 
-const AstronomicGalery = ( {images} : Props) => {
+const AstrophotoGalery = ( {images} : Props) => {
     return (
-      <>
-        <Head>
-            <title>MF | Galeria Astronômica</title>
-        </Head>
-        <div className='bg-secondary-grey text-white h-screen snap-y snap-mandatory 
-    overflow-x-hidden overflow-y-scroll z-0 scrollbar-thin scrollbar-track-gray-300 scrollbar-thumb-primary-red/80'>
+        <div className='bg-secondary-grey text-white overflow-x-hidden overflow-y-scroll z-0 scrollbar-thin scrollbar-track-gray-300 scrollbar-thumb-primary-red/80'>
             <Menu />
-            <section id='astro-gallery'>
-                <ImageGrid images={images} />
-            </section>
+            <PageTitle titleData={pageTitle}/>
+            <div className='container mx-auto max-w-4xl m-8 py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8'>
+                <div className='grid grid-cols-3 gap-4'>
+                    {images.map((image) => (
+                        <ImageCard key={image.id} image={image}/>
+                    ))}
+                </div>
+            </div>
         </div>
-            </>
     );
 }
 
-export default AstronomicGalery
+export default AstrophotoGalery
+
+
+
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
     const supabaseAdmin = createClient(
