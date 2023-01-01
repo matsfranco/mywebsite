@@ -15,12 +15,10 @@ export default function GalleryImage( {image} : { image : ImageData } ) {
     const [modalIsOpen, setIsOpen] = useState(false)
 
     function openModal() {
-      console.log('openModal')
       setIsOpen(true)
     }
 
     function closeModal() {
-      console.log('closeModal')
       setIsOpen(false)
     }
 
