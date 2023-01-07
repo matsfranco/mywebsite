@@ -11,6 +11,7 @@ export interface ImageData {
     weather: string;
     object: string;
     cameras: string;
+    tags: string;
 }
 
 export interface HeroInfo {
@@ -94,4 +95,9 @@ interface TimeLineItem {
     organizationLogo: string;
     description: string;
     itemImage: string;
+}
+
+export interface TitleData {
+    title: string;
+    subtitle: string;
 }

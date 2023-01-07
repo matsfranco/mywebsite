@@ -46,24 +46,39 @@ export default function Hero({ heroInfo }: Props) {
                 <span className='mr-3'>{text}</span>
                 <Cursor cursorColor='#E5383B'/>
             </h1>
-            <div className='pt-12'>
-                <Link href='#about'>
-                    <button className='heroButton'>Sobre mim</button>
-                </Link>
+            <div className='pt-12 grid grid-cols-6 sm:grid-cols-5 gap-2 place-items-center'>
+                <div className='col-span-2 sm:col-span-1'>
+                    <Link href='#about'>
+                        <button className='heroButton'>Sobre mim</button>
+                    </Link>
+                </div>
+                <div className='col-span-2 sm:col-span-1'>
                 <Link href='#experience'>
                     <button className='heroButton'>Experiência</button>
                 </Link>
+                </div>
+                <div className='col-span-2 sm:col-span-1'>
                 <Link href='#skills'>
                     <button className='heroButton'>Skills</button>
                 </Link>
+                </div>
+                <div className='col-span-3 sm:col-span-1'>
                 <Link href='#projects'>
                     <button className='heroButton'>Projetos</button>
                 </Link>
+                </div>
+                <div className='col-span-3 sm:col-span-1'>
                 <Link href='#contact'>
                     <button className='heroButton'>Contatos</button>
                 </Link>
-                <Link href='/astronomic-galery'>
-                    <button className='heroButton'>Galeria Astronômica</button>
+                </div>
+            </div>
+            <div className='mt-8 grid grid-cols-2 place-items-center'>
+                <Link href='/astronomy'>
+                    <button className='heroHighlight'>Astronomia</button>
+                </Link>
+                <Link href='/engineering'>
+                    <button className='heroHighlight'>Engenharia</button>
                 </Link>
             </div>
         </div>

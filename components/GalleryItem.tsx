@@ -2,7 +2,7 @@ import Image from 'next/image';
 import React, {useState} from 'react';
 import  { ImageData } from '../typings';
 import Modal from 'react-modal';
-import GalleryItemFull from './GalleryItemFull';
+import GalleryItemFull from './ImageCardModal';
 import moment from 'moment';
 
 
@@ -15,12 +15,10 @@ export default function GalleryImage( {image} : { image : ImageData } ) {
     const [modalIsOpen, setIsOpen] = useState(false)
 
     function openModal() {
-      console.log('openModal')
       setIsOpen(true)
     }
 
     function closeModal() {
-      console.log('closeModal')
       setIsOpen(false)
     }
 

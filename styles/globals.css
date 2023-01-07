@@ -4,9 +4,13 @@
 
 @layer components {
     .heroButton {
-        @apply px-2 md:px-6 py-4 border border-[#242424] rounded-full uppercase text-xs md:text-base 
-        tracking-widest text-gray-400 transition-all hover:border-[#E5383B]/80 
-         hover:text-[#E5383B]/80 hover:font-bold
+        @apply px-2 md:px-6 py-2 border border-[#242424] rounded-full uppercase text-xs md:text-base 
+        tracking-widest text-gray-400 transition-all hover:border-[#E5383B] 
+         hover:text-[#E5383B] hover:font-bold
+    }
+
+    .heroHighlight {
+        @apply col-span-1 h-12 flex items-center transition hover:-translate-y-1 hover:bg-primary-red duration-300 inline-block bg-secondary-grey border border-secondary-grey text-lg font-medium rounded rounded-full text-white p-4 cursor-pointer noselect 
     }
 
     .contactInput {
@@ -19,7 +23,7 @@
         @apply absolute top-12 uppercase font-semibold tracking-[10px] text-white text-2xl border-b border-primary-red pl-2 pb-1
     }
     .sectionSubtitle {
-        @apply absolute mx-2 top-24  text-gray-500 text-sm
+        @apply absolute mx-2 top-24 text-gray-500 text-sm
     }
     
     .noselect {
