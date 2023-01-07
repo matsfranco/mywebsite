@@ -14,7 +14,7 @@ type Props = {
 
 const pageTitle = {
     title: "Galeria de Astrofotografias",
-    subtitle: "Galeria de astrofotografias de minha autoria. Você pode clicar nas imagens para ampliá-las e ver detalhes sobre as fotos."
+    subtitle: "Galeria de astrofotografias feitas por mim. Você pode utilizar a busca digitando o nome de objetos astronômicos e clicar nas imagens para ver mais detalhes sobre a foto."
 }
 
 
@@ -35,11 +35,13 @@ const AstrophotoGalery = ( {images} : Props) => {
                     <form className='w-full max-w-sm pt-12 md:pt-4'>
                         <div className='flex items-center border-b border-primary-red py-1'>
                             <input 
-                                onChange={e => setText(e.target.value)} 
+                                onChange={e => setText(e.target.value)}
+                                onFocus={(e) => e.target.placeholder = ""} 
+                                onBlur={(e) => e.target.placeholder = "Digite para buscar..."}
                                 className='appearence-nono bg-transparent border-none w-full
-                                    text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none'
+                                    text-white mr-3 py-1 px-2 leading-tight focus:outline-none'
                                 type='text' 
-                                placeholder='Digite para buscar...' 
+                                placeholder='Digite para buscar...'   
                             />
                         </div>
                     </form>                
@@ -47,7 +49,6 @@ const AstrophotoGalery = ( {images} : Props) => {
                 
                 {filtered.length === 0 && 
                     <div className='h-screen'>
-
                         <p>Nenhuma imagem encontrada...</p>
                         <p>Talvez esta imagem não exista na minha galeria ou o termo não foi digitado corretamente.</p>
                     </div>
