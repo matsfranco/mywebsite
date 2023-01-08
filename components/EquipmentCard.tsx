@@ -26,7 +26,7 @@ const EquipmentCard = ( {equipment} : { equipment : Equipment } ) => {
 
     return (
         <div>
-        <div className="max-w-sm rounded overflow-hidden m-2 shadow-lg shadow-black bg-black bg-opacity-40">
+        <div className="rounded overflow-hidden m-4 shadow-lg shadow-black bg-black bg-opacity-40">
             <div className="w-full aspect-w-3 aspect-h-4 rounded bg-secondary-grey" onClick={openModal}>
                 <Image
                   alt=""
