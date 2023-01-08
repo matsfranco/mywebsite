@@ -12,16 +12,18 @@ import { getHeroInfo } from '../services/getHeroInfo'
 import { getSkills } from '../services/getSkills'
 import { getExperiences } from '../services/getExperiences'
 import { getProjects } from '../services/getProjects'
-import { HeroInfo,SkillDataType,Experience,Project } from "../typings"
+import { getCertifications } from '../services/getCertifications'
+import { HeroInfo,SkillDataType,Experience,Project,Certification } from "../typings"
 
 type Props = {
   heroInfo: HeroInfo;
   skills: SkillDataType[];
   experiences: Experience[];
   projects: Project[];
+  certifications: Certification[];
 }
 
-const Home = ({heroInfo, skills, experiences, projects}: Props) => {
+const Home = ({heroInfo, skills, experiences, projects, certifications}: Props) => {
   
   let academicExp = experiences.filter(function(experience) {
     return experience.type.includes('Academic')
@@ -29,11 +31,7 @@ const Home = ({heroInfo, skills, experiences, projects}: Props) => {
   let professionalExp = experiences.filter(function(experience) {
     return experience.type.includes('Professional')
   })
-  
-  let certificationExp = experiences.filter(function(experience) {
-    return experience.type.includes('Certification')
-  })
-  
+
   return (
     <>
 
@@ -54,7 +52,7 @@ const Home = ({heroInfo, skills, experiences, projects}: Props) => {
       </section>
 
       <section id='skills' className='snap-center'>
-        <Skills skills={skills}/>
+        <Skills skills={skills} certifications={certifications}/>
       </section>
 
       <section id='experience' className='snap-center'>
@@ -85,13 +83,15 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   const skills: SkillDataType[] = await getSkills();
   const experiences: Experience[] = await getExperiences();
   const projects: Project[] = await getProjects();
+  const certifications: Certification[] = await getCertifications();
 
   return {
     props: {
       heroInfo,
       skills,
       experiences,
-      projects
+      projects,
+      certifications
     },
     revalidate: 300,
   };

@@ -114,3 +114,14 @@ export interface Equipment {
         url: string;
     };
 }
+
+export interface Certification {
+    id: string;
+    name: string;
+    date: date;
+    number: string;
+    expeditedBy: string;
+    image: {
+        url: string;
+    };
+}
