@@ -9,7 +9,18 @@ type Props = {
     certifications: Certification[]
 }
 
+
 function Skills({ skills, certifications }: Props) {
+
+    const skillsByGroup = skills.reduce(function (skillsByGroup, skill) {
+        skillsByGroup[skill.group] = skillsByGroup[skill.group] || [];
+        skillsByGroup[skill.group].push(skill);
+        return skillsByGroup;
+    }, Object.create(null));
+
+    console.log(skillsByGroup);
+
+
   return (
     <motion.div 
         initial={{ opacity: 0}}
