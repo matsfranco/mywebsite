@@ -1,13 +1,15 @@
 import { motion } from 'framer-motion'
 import React from 'react'
 import Skill from './Skill'
-import { SkillDataType } from "../typings"
+import CertificationItem from './CertificationItem'
+import { SkillDataType,Certification } from "../typings"
 
 type Props = { 
     skills: SkillDataType[]
+    certifications: Certification[]
 }
 
-function Skills({ skills }: Props) {
+function Skills({ skills, certifications }: Props) {
   return (
     <motion.div 
         initial={{ opacity: 0}}
@@ -18,20 +20,26 @@ function Skills({ skills }: Props) {
         xl:flex-row xl:px-10 xl:space-y-0'
     >
         <h3 className='sectionTitle'>
-            Skills
+            Skills & Certificações
         </h3>
-        <h3 className='absolute mx-2 top-36  text-gray-500 text-sm'>
-            Algumas das principais habilidades que possuo em tecnologia da informação e engenharia
+        <h3 className='absolute mx-2 top-32 text-gray-500 text-sm'>
+            Algumas das principais habilidades e certificações que possuo em tecnologias e engenharia
         </h3>
-        <div>
-        <div className='grid grid-cols-4 gap-4 md:grid-cols-4 md:gap-5 xl:grid-cols-5 xl:gap-10 bg-black bg-opacity-30 p-4 rounded-lg'>
-            {skills?.slice(0,skills.length/2).map((skill,i) => (
-                <Skill key={skill.id} skill={skill} directionLeft={true}/> 
-            ))}
-            {skills?.slice(skills.length/2, skills.length)?.map((skill,i) => (
-                <Skill key={skill.id} skill={skill} directionLeft={false}/> 
-            ))}
-        </div>
+        <div className='grid grid-cols-1 gap-2'>
+            <div className='grid grid-cols-5 gap-4 md:grid-cols-5 md:gap-5 xl:grid-cols-5 xl:gap-10 bg-black bg-opacity-30 p-4 rounded-lg'>
+                {skills?.slice(0,skills.length/2).map((skill,i) => (
+                    <Skill key={skill.id} skill={skill} directionLeft={true}/> 
+                ))}
+                {skills?.slice(skills.length/2, skills.length)?.map((skill,i) => (
+                    <Skill key={skill.id} skill={skill} directionLeft={false}/> 
+                ))}
+            </div>
+            
+            <div className='grid grid-cols-1 gap-2 bg-black bg-opacity-30 p-4 rounded-lg'>
+                    {certifications?.map((certification,i) => (
+                        <CertificationItem key={certification.id} certification={certification} /> 
+                    ))}
+            </div>
         </div>
     </motion.div>
   )

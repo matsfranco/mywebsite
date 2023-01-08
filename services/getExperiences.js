@@ -4,9 +4,10 @@ import { request, gql } from 'graphql-request';
 export const getExperiences = async () => {
     const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT;
     const query = gql`
-    query getSkills {
+    query getExperiences {
       experiences (orderBy: endDate_DESC){
         id
+        type
         isCurrentlyWorkingHere
         jobTitle
         skills {

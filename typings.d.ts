@@ -37,6 +37,7 @@ export interface SkillDataType {
 
 export interface Experience {
     id: string;
+    type: string;
     startDate: date;
     endDate: date;
     isCurrentlyWorkingHere: boolean;
@@ -110,6 +111,17 @@ export interface Equipment {
     description: string;
     tags: string;
     photo: {
+        url: string;
+    };
+}
+
+export interface Certification {
+    id: string;
+    name: string;
+    date: date;
+    number: string;
+    expeditedBy: string;
+    image: {
         url: string;
     };
 }

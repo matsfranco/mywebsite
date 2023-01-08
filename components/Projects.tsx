@@ -23,7 +23,7 @@ function Projects({ projects }: Props) {
             <h3 className='absolute mx-2 top-36  text-gray-500 text-sm'>
                 Clique e veja informações sobre alguns dos projetos mais relevantes em que trabalhei
             </h3>
-            <div className='mt-0 md:mt-24 w-full flex space-x-4 overflow-x-scroll p-8 snap-x snap-mandatory scrollbar scrollbar-track-gray-300 scrollbar-thumb-primary-red/80'>
+            <div className='mt-0 md:mt-24 w-full flex space-x-4 overflow-x-scroll p-8 snap-x snap-mandatory scrollbar-thin scrollbar-track-gray-300 scrollbar-thumb-primary-red/80'>
                 {projects?.map((project, i) => (
                     <ProjectCard key={project.id} project={project} />
                 ))}

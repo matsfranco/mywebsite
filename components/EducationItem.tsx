@@ -8,11 +8,11 @@ type Props = {
     experience: Experience;
 }
 
-const TimelineItem = ({ experience } : Props) => {
+const EducationItem = ({ experience } : Props) => {
     return (
     <>
         
-        <div className="group grow relative flex cursor-pointer noselect">
+        <div className="group grow relative flex justify-center cursor-pointer noselect">
             
             <article className="flex flex-col items-center space-y-2 flex-shrink-0 
                 snap-center bg-black bg-opacity-30 opacity-100 cursor-pointer transition-opacity 
@@ -58,7 +58,7 @@ const TimelineItem = ({ experience } : Props) => {
                 </div>
                 </motion.div>  
             </article>
-            <div className='w-full h-full absolute opacity-0 z-0 rounded-lg group-hover:opacity-95 group-hover:bg-black transition duration-300 ease-in-out border border-primary-red'>
+            <div className='h-[500px] w-[290px] md:h-[500px] md:w-[400px] absolute opacity-0 z-0 rounded-lg group-hover:opacity-95 group-hover:bg-black transition duration-300 ease-in-out border border-primary-red'>
                 <div className=''>
                     <p className='p-2 my-1 mx-12 font-bold text-white text-base md:text-lg lg:text-xl border-b border-primary-red'>
                         {experience?.jobTitle}
@@ -82,4 +82,4 @@ const TimelineItem = ({ experience } : Props) => {
   )
 }
 
-export default TimelineItem
+export default EducationItem
