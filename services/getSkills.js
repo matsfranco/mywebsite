@@ -8,6 +8,7 @@ export const getSkills = async () => {
       skills (where:{showInSkillsPage: true}, first:20, orderBy: name_ASC) {
         id
         name
+        group
         image {
           url
         }
