@@ -1,13 +1,13 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import TimelineItem from './TimelineItem';
+import EducationItem from './EducationItem';
 import { Experience } from '../typings';
 
 type Props = {
-  experiences: Experience[]
+  academicExps: Experience[]
 }
 
-function Experiences({ experiences }: Props) {
+function Education({ academicExps }: Props) {
   return (
     <motion.div 
         initial={{ opacity: 0}}
@@ -17,18 +17,18 @@ function Experiences({ experiences }: Props) {
                     max-w-full px-4 justify-evenly mx-auto items-center'
         >
       <h3 className='sectionTitle'>    
-        Experiência
+        Formação Acadêmica
       </h3>
       <h3 className='absolute mx-2 top-36  text-gray-500 text-sm'>
-        Linha do Tempo da minha atuação profissional. Clique ou passe o mouse ver mais ter detalhes.
+        Linha do tempo com as minhas formações
       </h3>
-      <div className="relative pt-12 flex w-full overflow-x-scroll snap-x snap-mandatory scrollbar-thin scrollbar-track-gray-300 scrollbar-thumb-[#E5383B]/80 ">               
-        {experiences?.map((experience, i) => (
-          <TimelineItem key={experience.id} experience={experience} />
+      <div className="relative pt-12 flex items-stretch w-full md:w-[80%] overflow-x-scroll snap-x snap-mandatory scrollbar-thin scrollbar-track-gray-300 scrollbar-thumb-[#E5383B]/80 ">               
+        {academicExps?.map((academicExp, i) => (
+          <EducationItem key={academicExp.id} experience={academicExp} />
         ))}
       </div>
     </motion.div>
   )
 }
 
-export default Experiences;
+export default Education;

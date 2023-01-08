@@ -37,6 +37,7 @@ export interface SkillDataType {
 
 export interface Experience {
     id: string;
+    type: string;
     startDate: date;
     endDate: date;
     isCurrentlyWorkingHere: boolean;

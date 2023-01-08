@@ -5,6 +5,7 @@ import Hero from '../components/Hero'
 import LinkTree from '../components/LinkTree'
 import Skills from '../components/Skills'
 import Menu from '../components/Menu'
+import Education from '../components/Education'
 import Experiences from '../components/Experiences'
 import Projects from '../components/Projects'
 import { getHeroInfo } from '../services/getHeroInfo'
@@ -21,6 +22,18 @@ type Props = {
 }
 
 const Home = ({heroInfo, skills, experiences, projects}: Props) => {
+  
+  let academicExp = experiences.filter(function(experience) {
+    return experience.type.includes('Academic')
+  })
+  let professionalExp = experiences.filter(function(experience) {
+    return experience.type.includes('Professional')
+  })
+  
+  let certificationExp = experiences.filter(function(experience) {
+    return experience.type.includes('Certification')
+  })
+  
   return (
     <>
 
@@ -45,7 +58,11 @@ const Home = ({heroInfo, skills, experiences, projects}: Props) => {
       </section>
 
       <section id='experience' className='snap-center'>
-        <Experiences experiences={experiences}/>
+        <Experiences experiences={professionalExp}/>
+      </section>
+
+      <section id='academic' className='snap-center'>
+        <Education academicExps={academicExp}/>
       </section>
 
       <section id='projects'  className='snap-center'>
