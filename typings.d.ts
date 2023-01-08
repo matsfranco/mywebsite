@@ -30,6 +30,7 @@ export interface HeroInfo {
 export interface SkillDataType {
     id: string;
     name: string;
+    group: string;
     image: {
         url: string;
     };
