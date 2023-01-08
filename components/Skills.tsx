@@ -25,8 +25,9 @@ function Skills({ skills, certifications }: Props) {
         <h3 className='absolute mx-2 top-32 text-gray-500 text-sm'>
             Algumas das principais habilidades e certificações que possuo em tecnologias e engenharia
         </h3>
-        <div className='grid grid-cols-1 gap-2'>
-            <div className='grid grid-cols-5 gap-4 md:grid-cols-5 md:gap-5 xl:grid-cols-5 xl:gap-10 bg-black bg-opacity-30 p-4 rounded-lg'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 gap-2'>
+
+            <div className='col-span-1 grid grid-cols-5 gap-4 md:grid-cols-5 md:gap-5 xl:grid-cols-5 xl:gap-10 bg-black bg-opacity-30 p-4 rounded-lg'>
                 {skills?.slice(0,skills.length/2).map((skill,i) => (
                     <Skill key={skill.id} skill={skill} directionLeft={true}/> 
                 ))}
@@ -35,7 +36,7 @@ function Skills({ skills, certifications }: Props) {
                 ))}
             </div>
             
-            <div className='grid grid-cols-1 gap-2 bg-black bg-opacity-30 p-4 rounded-lg'>
+            <div className='col-span-1 grid grid-cols-1 gap-2 bg-black bg-opacity-30 p-4 rounded-lg'>
                     {certifications?.map((certification,i) => (
                         <CertificationItem key={certification.id} certification={certification} /> 
                     ))}
