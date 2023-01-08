@@ -32,6 +32,13 @@ const Astronomy = () => {
                                 </span>
                             </Link>
                         </div>
+                        <div className="col-span-1 h-16 flex items-center transition hover:-translate-y-1 hover:bg-primary-red duration-300 inline-block bg-secondary-grey border border-secondary-grey text-lg font-medium rounded rounded-full text-white p-4 cursor-pointer noselect ">
+                            <Link href="/astronomy/astro-equipments">
+                                <span className="p-2">
+                                    Equipamentos Astronômicos
+                                </span>
+                            </Link>
+                        </div>
                     </div>
                 </div>
                 

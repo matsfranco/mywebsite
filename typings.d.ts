@@ -101,3 +101,15 @@ export interface TitleData {
     title: string;
     subtitle: string;
 }
+
+export interface Equipment {
+    id: string;
+    manufacturer: string;
+    model: string;
+    role: string;
+    description: string;
+    tags: string;
+    photo: {
+        url: string;
+    };
+}
