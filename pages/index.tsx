@@ -1,6 +1,5 @@
 import type { GetStaticProps,NextPage } from 'next'
 import Head from 'next/head'
-//import Link from 'next/link'
 import About from '../components/About'
 import Hero from '../components/Hero'
 import LinkTree from '../components/LinkTree'
@@ -8,15 +7,11 @@ import Skills from '../components/Skills'
 import Menu from '../components/Menu'
 import Experiences from '../components/Experiences'
 import Projects from '../components/Projects'
-
-//import { Experience, PageInfo, Project, Social, Skill } from '../typings'
 import { getHeroInfo } from '../services/getHeroInfo'
 import { getSkills } from '../services/getSkills'
 import { getExperiences } from '../services/getExperiences'
 import { getProjects } from '../services/getProjects'
 import { HeroInfo,SkillDataType,Experience,Project } from "../typings"
-//import { fetchSkills } from '../utils/fetchSkills'
-//import { fetchSocials } from '../utils/fetchSocials'
 
 type Props = {
   heroInfo: HeroInfo;
@@ -73,7 +68,6 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   const skills: SkillDataType[] = await getSkills();
   const experiences: Experience[] = await getExperiences();
   const projects: Project[] = await getProjects();
-  //const socials: Social[] = await fetchSocials();
 
   return {
     props: {
