@@ -4,6 +4,7 @@ import BackgroundCircles from './BackgroundCircles'
 import { motion } from "framer-motion"; 
 import Link from 'next/link';
 import { HeroInfo } from '../typings';
+import Menu2 from '../components/Menu2'
 
 type Props = {
     heroInfo: HeroInfo
@@ -31,8 +32,11 @@ export default function Hero({ heroInfo }: Props) {
         transition={{
             duration: 1,
         }}
-        className='h-screen flex flex-col space-y-8 items-center justify-center
-    text-center overflow-hidden'>
+        className='h-screen flex flex-col space-y-8 items-center justify-start
+            text-center overflow-hidden'>
+        
+        <Menu2 />
+
         <BackgroundCircles />
         <img 
             className='relative rounded-full h-48 w-48 md:h-72 md:w-72 mx-auto object-cover border border-primary-red'
@@ -53,18 +57,13 @@ export default function Hero({ heroInfo }: Props) {
                     </Link>
                 </div>
                 <div className='col-span-2 sm:col-span-1'>
-                <Link href='#experience'>
-                    <button className='heroButton'>Experiência</button>
-                </Link>
-                </div>
-                <div className='col-span-2 sm:col-span-1'>
-                <Link href='#academic'>
-                    <button className='heroButton'>Formação</button>
-                </Link>
-                </div>
-                <div className='col-span-2 sm:col-span-1'>
                 <Link href='#skills'>
                     <button className='heroButton'>Skills</button>
+                </Link>
+                </div>
+                <div className='col-span-2 sm:col-span-1'>
+                <Link href='#experience'>
+                    <button className='heroButton'>Experiência</button>
                 </Link>
                 </div>
                 <div className='col-span-2 sm:col-span-1'>
@@ -73,18 +72,15 @@ export default function Hero({ heroInfo }: Props) {
                 </Link>
                 </div>
                 <div className='col-span-2 sm:col-span-1'>
+                <Link href='#academic'>
+                    <button className='heroButton'>Formação</button>
+                </Link>
+                </div>
+                <div className='col-span-2 sm:col-span-1'>
                 <Link href='#contact'>
                     <button className='heroButton'>Contatos</button>
                 </Link>
                 </div>
-            </div>
-            <div className='mt-8 grid grid-cols-2 place-items-center'>
-                <Link href='/astronomy'>
-                    <button className='heroHighlight'>Astronomia</button>
-                </Link>
-                <Link href='/engineering'>
-                    <button className='heroHighlight'>Engenharia</button>
-                </Link>
             </div>
         </div>
     </motion.div>
