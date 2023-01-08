@@ -19,7 +19,7 @@ function CertificationItem({ certification }: Props) {
             />
         </div>
         <div className=''>
-            <div className='text-sm font-bold text-white opacity-100 text-left rounded opacity-90 noselect border-b border-primary-red'>{certification?.name}</div>
+            <div className='text-sm font-bold text-white opacity-100 text-left opacity-90 noselect border-b border-primary-red'>{certification?.name}</div>
             <div className='text-xs text-white opacity-100 text-left noselect'>{certification?.expeditedBy}</div>
             <div className='text-xs text-white opacity-100 text-left noselect'>Id #{certification?.number}</div>
         </div>

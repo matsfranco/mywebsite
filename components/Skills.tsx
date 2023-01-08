@@ -22,7 +22,7 @@ function Skills({ skills, certifications }: Props) {
         <h3 className='sectionTitle'>
             Skills & Certificações
         </h3>
-        <h3 className='absolute mx-2 top-28  text-gray-500 text-sm'>
+        <h3 className='absolute mx-2 top-30 text-gray-500 text-sm'>
             Algumas das principais habilidades e certificações que possuo em tecnologias e engenharia
         </h3>
         <div className='grid grid-cols-1 gap-2'>
