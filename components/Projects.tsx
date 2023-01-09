@@ -23,10 +23,10 @@ function Projects({ projects,nextSection,backSection }: Props) {
             <h3 className='sectionTitle'>    
                 Projetos
             </h3>
-            <h3 className='absolute mx-2 top-24 text-gray-500 text-sm'>
+            <h3 className='absolute mx-2 top-36  text-gray-500 text-sm'>
                 Clique e veja informações sobre alguns dos projetos mais relevantes em que trabalhei
             </h3>
-            <div className='grid grid-cols-1 sm:grid-cols-2 gap-1'>
+            <div className='grid grid-cols-1 container justify-center'>
                 <div className='col-span-1 mt-0 md:mt-24 w-full flex space-x-4 overflow-x-scroll p-8 snap-x snap-mandatory scrollbar-thin scrollbar-track-gray-300 scrollbar-thumb-primary-red/80'>
                     {projects?.map((project, i) => (
                         <ProjectCard key={project.id} project={project} />

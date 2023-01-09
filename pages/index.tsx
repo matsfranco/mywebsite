@@ -22,6 +22,17 @@ type Props = {
   certifications: Certification[];
 }
 
+const aboutFlowControl = {
+  next : {
+    label : "Skills",
+    href : "#skills"
+  },
+  back : {
+    label : "Home",
+    href : "#hero"
+  }
+}
+
 const skillFlowControl = {
   next : {
     label : "Experiências",
@@ -66,6 +77,17 @@ const academicFlowControl = {
   },
 }
 
+const contactFlowControl = {
+  next : {
+    label : "Home",
+    href : "#hero"
+  },
+  back : {
+    label : "Formação",
+    href : "#academic"
+  },
+}
+
 
 const Home = ({heroInfo, skills, experiences, projects, certifications}: Props) => {
   
@@ -89,7 +111,7 @@ const Home = ({heroInfo, skills, experiences, projects, certifications}: Props) 
       </section>
       
       <section id='about' className='snap-center'>
-        <About heroInfo={heroInfo} nextSection="skill" backSection="home"/>
+        <About heroInfo={heroInfo} nextSection={aboutFlowControl.next} backSection={aboutFlowControl.back}/>
       </section>
 
       <section id='skills' className='snap-center'>
@@ -109,7 +131,7 @@ const Home = ({heroInfo, skills, experiences, projects, certifications}: Props) 
       </section>
 
       <section id='contact' className='snap-center'>
-        <LinkTree />
+        <LinkTree nextSection={contactFlowControl.next} backSection={contactFlowControl.back}/>
       </section>
 
     </div>

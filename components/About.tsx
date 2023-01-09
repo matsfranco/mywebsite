@@ -1,13 +1,13 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { HeroInfo } from '../typings'
+import { HeroInfo, PageFlow } from '../typings'
 import PageFlowControl from '../components/PageFlowControl'
 
 type Props = {
     heroInfo: HeroInfo
-    nextSection: string
-    backSection: string
-}
+    nextSection: PageFlow
+    backSection: PageFlow
+  }
 
 export default function About({ heroInfo,nextSection,backSection }: Props) {
   return (
@@ -23,28 +23,35 @@ export default function About({ heroInfo,nextSection,backSection }: Props) {
             <h3 className='sectionTitle'>
                 Sobre Mim   
             </h3>
-            <motion.img
-                initial={{
-                    x: -200,
-                    opacity: 0 
-                }}
-                transition={{
-                    duration: 1.2,
-                }}
-                whileInView={{
-                    x: 0,
-                    opacity: 1
-                }}
-                viewport={{ once: true }}
-                src={heroInfo.profilePicture.url}
-                className='-mb-32 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover 
-                    md:rounded-lg md:w-64 md:h-95 md:w-[300px] md:h-[400px]'
-            /> 
-            <div className='m-3 p-3 space-y-10  bg-black bg-opacity-30 rounded-lg'>
-                <p className='text-sm font-light md:text-xl m-2'>
-                    {heroInfo.backgroundInformation}
-                </p>    
-            </div> 
+            <div className='grid grid-cols-1 container justify-center'>
+                <div className='col-span-1 flex flex-row'>
+                    <motion.img
+                        initial={{
+                            x: -200,
+                            opacity: 0 
+                        }}
+                        transition={{
+                            duration: 1.2,
+                        }}
+                        whileInView={{
+                            x: 0,
+                            opacity: 1
+                        }}
+                        viewport={{ once: true }}
+                        src={heroInfo.profilePicture.url}
+                        className='-mb-32 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover 
+                            md:rounded-lg md:w-64 md:h-95 md:w-[300px] md:h-[400px]'
+                    /> 
+                    <div className='m-3 px-3 space-y-10 bg-black bg-opacity-30 rounded-lg'>
+                        <p className='text-sm font-light md:text-xl m-2'>
+                            {heroInfo.backgroundInformation}
+                        </p>    
+                    </div>
+                </div>
+                <div className='col-span-1 pt-4'>
+                    <PageFlowControl next={nextSection} back={backSection}/>
+                </div> 
+            </div>
         </motion.div>
     </div>
   )
