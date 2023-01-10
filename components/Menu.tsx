@@ -35,6 +35,7 @@ export default function Menu() {
         
         <div className={`border border-primary-red border ease-in-out duration-100 top-0 right-0 w-[70vw] md:w-[40vw] bg-secondary-grey bg-opacity-80 p-10 md:p-20 text-white fixed h-full z-40 ${showSidebar ? "translate-x-0 " : "translate-x-full"}`}>
             <div className="pt-12 grid grid-cols-1 gap-2" onClick={() => setShowSidebar(!showSidebar)}>
+            
             {pages.map((page, index) => (
                 <Link key={index} href={`/${page.slug}`}><span className="loat-rightcursor-pointer col-span-1 p-2 align-middle text-white font-semibold text-xl cursor-pointer">{page.name}</span></Link>
               ))}
@@ -42,7 +43,6 @@ export default function Menu() {
             <div className='relative mt-32'>
               <Footer />
             </div>
-            
         </div>
         </div>     
         </>
