@@ -9,6 +9,14 @@ type Props = {
     heroInfo: HeroInfo
 }
 
+const pages = [  
+    {name: 'Home', slug: '/'},
+    {name: 'Sobre mim', slug: '#about'},
+    {name: 'Astronomia', slug: '/astronomy'}, 
+    {name: 'Engenharia', slug: '/engineering'},
+    {name: 'Contatos', slug: '#contact'},     
+  ];
+
 export default function Hero({ heroInfo }: Props) {
     const [ text, count ] = useTypewriter({
         words: [
@@ -31,8 +39,21 @@ export default function Hero({ heroInfo }: Props) {
         transition={{
             duration: 1,
         }}
-        className='h-screen flex flex-col space-y-8 items-center justify-center
-    text-center overflow-hidden'>
+        className='h-screen flex flex-col space-y-8 items-center justify-start
+            text-center overflow-hidden'>
+        
+        <div className='container mx-auto px-10 mb-8 py-8 pb-8 md:pb-16'>
+            <div className="border-b w-full inline-block border-primary-red">
+                <nav className="flex items-center justify-between flex-wrap bg-secondary-gray pb-2  noselect">
+                    <div className="flex items-center flex-shrink-0 text-white mr-6">
+                        <Link href="/">
+                            <span className="noselect cursor-pointer font-bold md:text-3xl text-2xl text-white">Mateus Franco</span>
+                        </Link>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
         <BackgroundCircles />
         <img 
             className='relative rounded-full h-48 w-48 md:h-72 md:w-72 mx-auto object-cover border border-primary-red'
@@ -53,18 +74,13 @@ export default function Hero({ heroInfo }: Props) {
                     </Link>
                 </div>
                 <div className='col-span-2 sm:col-span-1'>
-                <Link href='#experience'>
-                    <button className='heroButton'>Experiência</button>
-                </Link>
-                </div>
-                <div className='col-span-2 sm:col-span-1'>
-                <Link href='#academic'>
-                    <button className='heroButton'>Formação</button>
-                </Link>
-                </div>
-                <div className='col-span-2 sm:col-span-1'>
                 <Link href='#skills'>
                     <button className='heroButton'>Skills</button>
+                </Link>
+                </div>
+                <div className='col-span-2 sm:col-span-1'>
+                <Link href='#experience'>
+                    <button className='heroButton'>Experiência</button>
                 </Link>
                 </div>
                 <div className='col-span-2 sm:col-span-1'>
@@ -73,18 +89,15 @@ export default function Hero({ heroInfo }: Props) {
                 </Link>
                 </div>
                 <div className='col-span-2 sm:col-span-1'>
+                <Link href='#academic'>
+                    <button className='heroButton'>Formação</button>
+                </Link>
+                </div>
+                <div className='col-span-2 sm:col-span-1'>
                 <Link href='#contact'>
                     <button className='heroButton'>Contatos</button>
                 </Link>
                 </div>
-            </div>
-            <div className='mt-8 grid grid-cols-2 place-items-center'>
-                <Link href='/astronomy'>
-                    <button className='heroHighlight'>Astronomia</button>
-                </Link>
-                <Link href='/engineering'>
-                    <button className='heroHighlight'>Engenharia</button>
-                </Link>
             </div>
         </div>
     </motion.div>

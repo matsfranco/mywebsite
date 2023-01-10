@@ -44,7 +44,7 @@ export default function Footer({ }) {
                 </div>
             </div>
             <div className="col-span-1 noselect">
-                <p className="text-white text-sm md:text-lg">Mateus Franco &copy; 2022</p>
+                <p className="text-white text-sm md:text-lg">Mateus Franco &copy; 2023</p>
             </div>
             <div className="text-white text-sm hover:text-primary-red noselect">
               <a href="https://forms.gle/pL4PE6JRuENuksYZ9">Deixe aqui o seu feedback!</a>

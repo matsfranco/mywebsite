@@ -5,13 +5,9 @@ import Footer from '../components/Footer'
 const pages = [  
                     {name: 'Início', slug: '#hero'},
                     {name: 'Sobre mim', slug: '#about'},
-                    {name: 'Experiências', slug: '#experience'}, 
-                    {name: 'Formação', slug: '#academic'}, 
-                    {name: 'Skills', slug: '#skills'},
-                    {name: 'Projetos', slug: '#projects'},
-                    {name: 'Contatos', slug: '#contact'},
                     {name: 'Astronomia', slug: 'astronomy'},  
-                    {name: 'Engenharia', slug: 'engineering'},    
+                    {name: 'Engenharia', slug: 'engineering'},  
+                    {name: 'Contatos', slug: '#contact'},  
                   ];
 
 export default function Menu() {
@@ -39,16 +35,15 @@ export default function Menu() {
         
         <div className={`border border-primary-red border ease-in-out duration-100 top-0 right-0 w-[70vw] md:w-[40vw] bg-secondary-grey bg-opacity-80 p-10 md:p-20 text-white fixed h-full z-40 ${showSidebar ? "translate-x-0 " : "translate-x-full"}`}>
             <div className="pt-12 grid grid-cols-1 gap-2" onClick={() => setShowSidebar(!showSidebar)}>
+            
             {pages.map((page, index) => (
                 <Link key={index} href={`/${page.slug}`}><span className="loat-rightcursor-pointer col-span-1 p-2 align-middle text-white font-semibold text-xl cursor-pointer">{page.name}</span></Link>
               ))}
             </div>
-            <div className='pt-28'>
+            <div className='relative mt-32'>
               <Footer />
             </div>
-            
         </div>
-        
         </div>     
         </>
     )

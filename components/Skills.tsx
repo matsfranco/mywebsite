@@ -2,14 +2,17 @@ import { motion } from 'framer-motion'
 import React from 'react'
 import Certifications from './Certifications'
 import SkillSet from './SkillSet'
-import { SkillDataType,Certification } from "../typings"
+import { SkillDataType,Certification,PageFlow } from "../typings"
+import PageFlowControl from './PageFlowControl'
 
 type Props = { 
     skills: SkillDataType[]
     certifications: Certification[]
+    nextSection: PageFlow
+    backSection: PageFlow
 }
 
-function Skills({ skills, certifications }: Props) {
+function Skills({ skills,certifications,nextSection,backSection }: Props) {
 
     const skillsByGroup = skills.reduce(function (skillsByGroup, skill) {
         skillsByGroup[skill.group] = skillsByGroup[skill.group] || [];
@@ -18,6 +21,7 @@ function Skills({ skills, certifications }: Props) {
     }, Object.create(null));
 
     return (
+        <div className=''>
         <motion.div 
             initial={{ opacity: 0}}
             whileInView={{ opacity: 1}}
@@ -40,9 +44,13 @@ function Skills({ skills, certifications }: Props) {
                 </div>
                 <div className='col-span-1'>
                     <Certifications certifications={certifications}/>
+                </div>    
+                <div className='col-span-1 sm:col-span-2'>
+                    <PageFlowControl next={nextSection} back={backSection}/>
                 </div>
             </div>
         </motion.div>
+        </div>
     )
 }
 

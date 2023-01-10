@@ -126,3 +126,8 @@ export interface Certification {
         url: string;
     };
 }
+
+export interface PageFlow  {
+    label: string;
+    href: string;
+}
