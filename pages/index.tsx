@@ -13,6 +13,7 @@ import { getExperiences } from '../services/getExperiences'
 import { getProjects } from '../services/getProjects'
 import { getCertifications } from '../services/getCertifications'
 import { HeroInfo,SkillDataType,Experience,Project,Certification } from "../typings"
+import Menu from '../components/Menu'
 
 type Props = {
   heroInfo: HeroInfo;
@@ -106,6 +107,7 @@ const Home = ({heroInfo, skills, experiences, projects, certifications}: Props) 
       <Head>
         <title>Mateus Franco</title>
       </Head>
+      <Menu />
       <section id='hero' className='snap-center'>
         <Hero heroInfo={heroInfo}/>
       </section>

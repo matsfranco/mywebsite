@@ -4,11 +4,18 @@ import BackgroundCircles from './BackgroundCircles'
 import { motion } from "framer-motion"; 
 import Link from 'next/link';
 import { HeroInfo } from '../typings';
-import Menu2 from '../components/Menu2'
 
 type Props = {
     heroInfo: HeroInfo
 }
+
+const pages = [  
+    {name: 'Home', slug: '/'},
+    {name: 'Sobre mim', slug: '#about'},
+    {name: 'Astronomia', slug: '/astronomy'}, 
+    {name: 'Engenharia', slug: '/engineering'},
+    {name: 'Contatos', slug: '#contact'},     
+  ];
 
 export default function Hero({ heroInfo }: Props) {
     const [ text, count ] = useTypewriter({
@@ -35,7 +42,17 @@ export default function Hero({ heroInfo }: Props) {
         className='h-screen flex flex-col space-y-8 items-center justify-start
             text-center overflow-hidden'>
         
-        <Menu2 />
+        <div className='container mx-auto px-10 mb-8 py-8 pb-8 md:pb-16'>
+            <div className="border-b w-full inline-block border-primary-red">
+                <nav className="flex items-center justify-between flex-wrap bg-secondary-gray pb-2  noselect">
+                    <div className="flex items-center flex-shrink-0 text-white mr-6">
+                        <Link href="/">
+                            <span className="noselect cursor-pointer font-bold md:text-3xl text-2xl text-white">Mateus Franco</span>
+                        </Link>
+                    </div>
+                </nav>
+            </div>
+        </div>
 
         <BackgroundCircles />
         <img 
