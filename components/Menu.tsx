@@ -23,7 +23,7 @@ export default function Menu() {
           ) : (
             <svg
               onClick={() => setShowSidebar(!showSidebar)}
-              className="fill-white bg-secondary-grey rounded border border-primary-red  fixed z-40 flex items-center cursor-pointer right-8 md:right-16 top-6 p-1"
+              className="fill-white bg-secondary-grey rounded border border-primary-red  fixed z-40 flex items-center cursor-pointer right-4 md:right-16 top-3 p-1"
               viewBox="0 0 100 80"
               width="40"
               height="40">
