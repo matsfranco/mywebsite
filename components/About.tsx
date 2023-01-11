@@ -38,11 +38,11 @@ export default function About({ heroInfo,nextSection,backSection }: Props) {
                 }}
                 viewport={{ once: true }}
                 src={heroInfo.profilePicture.url}
-                className='-mb-32 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover 
+                className='-mb-24 md:mb-0 flex-shrink-0 w-36 h-36 rounded-full object-cover 
                     md:rounded-lg md:w-64 md:h-95 md:w-[300px] md:h-[400px]'
             /> 
             <div className='m-3 p-3 space-y-10  bg-black bg-opacity-30 rounded-lg'>
-                <p className='text-sm font-light md:text-xl m-2'>
+                <p className='text-xs font-light md:text-xl m-2'>
                     {heroInfo.backgroundInformation}
                 </p>
                 <div className='col-span-1 pt-4'>
