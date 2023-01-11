@@ -67,7 +67,7 @@ export default function Hero({ heroInfo }: Props) {
                 <span className='mr-3'>{text}</span>
                 <Cursor cursorColor='#E5383B'/>
             </h1>
-            <div className='pt-12 grid grid-cols-6 sm:grid-cols-6 gap-2 place-items-center'>
+            <div className='pt-12 px- grid grid-cols-6 gap-3 place-items-center'>
                 <div className='col-span-2 sm:col-span-1'>
                     <Link href='#about'>
                         <button className='heroButton'>Sobre mim</button>
