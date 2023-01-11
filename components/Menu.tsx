@@ -37,7 +37,7 @@ export default function Menu() {
             <div className="pt-12 grid grid-cols-1 gap-2" onClick={() => setShowSidebar(!showSidebar)}>
             
             {pages.map((page, index) => (
-                <Link key={index} href={`/${page.slug}`}><span className="loat-rightcursor-pointer col-span-1 p-2 align-middle text-white font-semibold text-xl cursor-pointer">{page.name}</span></Link>
+                <Link key={index} href={`/${page.slug}`}><span className="float-left cursor-pointer col-span-1 p-2 align-middle text-white font-semibold text-xl cursor-pointer">{page.name}</span></Link>
               ))}
             </div>
             <div className='relative mt-32'>
