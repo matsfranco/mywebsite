@@ -20,7 +20,7 @@ function Education({ academicExps,nextSection,backSection }: Props) {
                     max-w-full px-4 justify-evenly mx-auto items-center'
         >
       <h3 className='sectionTitle'>    
-        Formação Acadêmica
+        Formação
       </h3>
       <h3 className='absolute mx-2 top-24 text-gray-500 text-sm'>
         Linha do tempo com as minhas formações
