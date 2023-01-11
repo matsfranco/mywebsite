@@ -14,7 +14,7 @@ type Props = {
 
 const pageTitle = {
     title: "Galeria de Astrofotografias",
-    subtitle: "Galeria de astrofotografias feitas por mim. Você pode utilizar a busca digitando o nome de objetos astronômicos e clicar nas imagens para ver mais detalhes sobre a foto."
+    subtitle: "Você pode utilizar a busca digitando o nome de objetos astronômicos e clicar nas imagens para ver mais detalhes"
 }
 
 
@@ -30,7 +30,9 @@ const AstrophotoGalery = ( {images} : Props) => {
         <div className='bg-secondary-grey text-white overflow-x-hidden overflow-y-scroll z-0 scrollbar-thin scrollbar-track-gray-300 scrollbar-thumb-primary-red/80'>
             
             <Menu />
-            <PageTitle titleData={pageTitle}/>
+            <div className='mt-4'>
+                <PageTitle titleData={pageTitle}/>
+            </div>
             <div className='container mx-auto max-w-4xl m-8 py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8'>
                 <div className='max-w-sm rounded overflow-hidden my-10 mx-auto'>
                     <form className='w-full max-w-sm pt-12 md:pt-4'>
