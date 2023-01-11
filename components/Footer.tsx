@@ -4,7 +4,7 @@ import { VscGithubInverted } from 'react-icons/vsc'
 
 export default function Footer({ }) {
   return (
-    <div className='container mx-auto px-10 border-t p-2'>
+    <div className='container mx-auto px-3 border-t p-2'>
         <div className="grid grid-cols-1 place-items-center gap-2">
             <div className="col-span-1">
                 <div className="grid place-items-center">        
