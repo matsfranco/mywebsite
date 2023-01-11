@@ -22,7 +22,7 @@ function Education({ academicExps,nextSection,backSection }: Props) {
       <h3 className='sectionTitle'>    
         Formação Acadêmica
       </h3>
-      <h3 className='absolute mx-2 top-32 text-gray-500 text-sm'>
+      <h3 className='absolute mx-2 top-24 text-gray-500 text-sm'>
         Linha do tempo com as minhas formações
       </h3>
       <div className='grid grid-cols-1 container justify-center'>

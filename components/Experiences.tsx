@@ -23,7 +23,7 @@ function Experiences({ experiences,nextSection,backSection }: Props) {
         Experiência
       </h3>
       <h3 className='absolute mx-2 top-24 text-gray-500 text-sm'>
-        Linha do Tempo da minha atuação profissional. Clique ou passe o mouse ver mais ter detalhes.
+        Clique ou passe o mouse ver mais detalhes
       </h3>
       <div className='grid grid-cols-1 container justify-center'>
         <div className="relative pt-12 flex w-full overflow-x-scroll snap-x snap-mandatory scrollbar-thin scrollbar-track-gray-300 scrollbar-thumb-[#E5383B]/80 ">               
