@@ -53,12 +53,3 @@ export default function About({ heroInfo,nextSection,backSection }: Props) {
     </motion.div>
   )
 }
-/*
-type Props = {
-    heroInfo: HeroInfo
-    nextSection: PageFlow
-    backSection: PageFlow
-  }
-
-export default function About({ heroInfo,nextSection,backSection }: Props) {
-    */
