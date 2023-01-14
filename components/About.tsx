@@ -21,7 +21,7 @@ export default function About({ heroInfo,nextSection,backSection }: Props) {
                     whileInView={{ opacity: 1}} 
                     transition={{ duration: 1.5 }}
                     className='py-2 md:py-12 flex flex-col relative text-center 
-                                md:text-left md:flex-row max-w-7xl px-10 justify-evenly 
+                                md:text-left md:flex-row max-w-7xl md:px-10 justify-evenly 
                                 mx-auto items-center'>
         <motion.img
             initial={{
@@ -40,7 +40,7 @@ export default function About({ heroInfo,nextSection,backSection }: Props) {
             className='m-2 my-8 flex-shrink-0 w-36 h-36 rounded-lg object-cover md:w-72 md:h-72'
         /> 
         <div className='m-3 p-3 space-y-10  bg-black bg-opacity-30 rounded-lg'>
-            <p className='text-xs font-light md:text-xl m-2'>
+            <p className='text-sm font-light md:text-xl m-2 text-justify'>
                 {heroInfo.backgroundInformation}
             </p>
         </div>

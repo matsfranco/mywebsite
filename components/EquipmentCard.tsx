@@ -45,10 +45,10 @@ const EquipmentCard = ( {equipment} : { equipment : Equipment } ) => {
             <div className=''>
                 <div className='py-1 rounded text-center'>
                     <div className='mx-5 border-b border-primary-red'>            
-                        <h3 className="text-sm text-white">{equipment?.manufacturer} {equipment?.model}</h3>
+                        <h3 className="text-sm sm:text-base font-bold text-white">{equipment?.manufacturer} {equipment?.model}</h3>
                     </div>
                     <div className=''>
-                        <p className="mx-2 mt-1 text-xs text-white">{equipment?.role}</p>  
+                        <p className="mx-2 mt-1 text-sm text-white">{equipment?.role}</p>  
                     </div>
                     <div className='px-4 py-2'>
                         {tags.map( tag => (

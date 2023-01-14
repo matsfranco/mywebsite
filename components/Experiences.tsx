@@ -14,7 +14,7 @@ function Experiences({ experiences,nextSection,backSection }: Props) {
   return (
     <div className='flex relative flex-col items-center'>
       <h3 className='sectionTitle'>    
-        Experiência
+        Experiências
       </h3>
       <h3 className='sectionSubtitle'>
         Clique ou passe o mouse ver mais detalhes
@@ -31,9 +31,6 @@ function Experiences({ experiences,nextSection,backSection }: Props) {
             {experiences?.map((experience, i) => (
               <TimelineItem key={experience.id} experience={experience} />
             ))}
-          </div>
-          <div className='col-span-1 pt-4'>
-            <PageFlowControl next={nextSection} back={backSection}/>
           </div>
         </div>
       </motion.div>

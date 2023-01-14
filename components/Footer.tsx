@@ -2,10 +2,15 @@ import Link from 'next/link'
 import { FaLinkedin, FaSalesforce, FaInstagram, FaYoutube, FaTwitter } from 'react-icons/fa';
 import { VscGithubInverted } from 'react-icons/vsc'
 
-export default function Footer({ }) {
+type Props = {
+  showSocials: boolean;
+}
+
+export default function Footer({ showSocials }: Props) {
   return (
-    <div className='container mx-auto px-3 border-t p-2'>
-        <div className="grid grid-cols-1 place-items-center gap-2">
+    <div className='container mx-auto px-3 border-t border-primary-red p-2'>
+        <div className="grid grid-cols-1 place-items-center gap-2 ">
+            {showSocials &&
             <div className="col-span-1">
                 <div className="grid place-items-center">        
                     <div className="grid grid-cols-3 md:grid-cols-6 gap-6">
@@ -43,10 +48,11 @@ export default function Footer({ }) {
                     </div>
                 </div>
             </div>
+}
             <div className="col-span-1 noselect">
                 <p className="text-white text-sm md:text-lg">Mateus Franco &copy; 2023</p>
             </div>
-            <div className="text-white text-sm hover:text-primary-red noselect">
+            <div className="text-white text-sm hover:text-primary-red noselect ">
               <a href="https://forms.gle/pL4PE6JRuENuksYZ9">Deixe aqui o seu feedback!</a>
             </div>
         </div>

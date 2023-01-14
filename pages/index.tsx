@@ -14,6 +14,7 @@ import { getProjects } from '../services/getProjects'
 import { getCertifications } from '../services/getCertifications'
 import { HeroInfo,SkillDataType,Experience,Project,Certification } from "../typings"
 import Menu from '../components/Menu'
+import Footer from '../components/Footer'
 
 type Props = {
   heroInfo: HeroInfo;
@@ -134,7 +135,7 @@ const Home = ({heroInfo, skills, experiences, projects, certifications}: Props) 
       <section id='contact' className='aboutSection'>
         <LinkTree nextSection={contactFlowControl.next} backSection={contactFlowControl.back}/>
       </section>
-
+      <Footer showSocials={false} />
     </div>
     </>
   )
