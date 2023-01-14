@@ -5,6 +5,7 @@ import { VscGithubInverted } from 'react-icons/vsc'
 import Footer from './Footer';
 import PageFlowControl from './PageFlowControl';
 import { PageFlow } from '../typings';
+import { motion } from 'framer-motion';
 
 type Props = {
   nextSection: PageFlow
@@ -13,12 +14,17 @@ type Props = {
 
 export default function LinkTree({ nextSection,backSection }: Props) {
   return (
-    <div className='min-h-screen flex relative flex-col text-center md:text-left
-    max-w-[2000px] justify-center mx-auto items-center
-    xl:flex-row xl:px-10 xl:space-y-0'>
-      <h3 className='sectionTitle'>
-            Contatos
-      </h3>
+    <div className='flex relative flex-col items-center'>
+    <h3 className='sectionTitle'>
+      Contatos
+    </h3>
+    <motion.div 
+          initial={{ opacity: 0}}
+          whileInView={{ opacity: 1}}
+          transition={{ duration: 1.0 }}
+          className='pt-8 flex relative overflow-hidden flex-col text-center md:flex-row 
+                      max-w-full px-4 justify-evenly mx-auto items-center'
+          >
       <div className='grid grid-cols-1 gap-1'>
         <div className=''>
           <div className="grid place-items-center">
@@ -78,7 +84,7 @@ export default function LinkTree({ nextSection,backSection }: Props) {
           <PageFlowControl next={nextSection} back={backSection}/>
         </div>
       </div>
-    </div>          
-
+    </motion.div>          
+    </div>
   )
 }
