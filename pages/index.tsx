@@ -111,27 +111,27 @@ const Home = ({heroInfo, skills, experiences, projects, certifications}: Props) 
         <Hero heroInfo={heroInfo}/>
       </section>
       
-      <section id='about' className=''>
+      <section id='about' className='aboutSection'>
         <About heroInfo={heroInfo} nextSection={aboutFlowControl.next} backSection={aboutFlowControl.back}/>
       </section>
 
-      <section id='skills' className=''>
+      <section id='skills' className='aboutSection'>
         <Skills skills={skills} certifications={certifications} nextSection={skillFlowControl.next} backSection={skillFlowControl.back}/>
       </section>
 
-      <section id='experience' className=''>
+      <section id='experience' className='aboutSection'>
         <Experiences experiences={professionalExp} nextSection={experienceFlowControl.next} backSection={experienceFlowControl.back}/>
       </section>
 
-      <section id='projects'  className=''>
+      <section id='projects'  className='aboutSection'>
         <Projects projects={projects} nextSection={projectsFlowControl.next} backSection={projectsFlowControl.back}/>
       </section>
 
-      <section id='academic' className=''>
+      <section id='academic' className='aboutSection'>
         <Education academicExps={academicExp} nextSection={academicFlowControl.next} backSection={academicFlowControl.back}/>
       </section>
 
-      <section id='contact' className=''>
+      <section id='contact' className='aboutSection'>
         <LinkTree nextSection={contactFlowControl.next} backSection={contactFlowControl.back}/>
       </section>
 
