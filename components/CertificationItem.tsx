@@ -9,7 +9,7 @@ type Props = {
 function CertificationItem({ certification }: Props) {
     
     return (
-    <div className='relative flex cursor-pointer m-1 gap-4'>
+    <div className='relative flex cursor-pointer mx-2 my-3 gap-4'>
         <div className=''>
             <img
                 alt=""

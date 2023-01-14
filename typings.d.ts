@@ -102,6 +102,7 @@ interface TimeLineItem {
 export interface TitleData {
     title: string;
     subtitle: string;
+    page: string;
 }
 
 export interface Equipment {

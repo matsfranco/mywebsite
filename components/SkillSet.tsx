@@ -12,7 +12,7 @@ type Props = {
 function SkillSet({ skills,setName,directionLeft }: Props) {
 
     return(
-        <div className='bg-black bg-opacity-30 p-1 px-3 sm:p-4 rounded-lg'>
+        <div className='m-2 p-1 px-3 sm:p-4 bg-black bg-opacity-30 rounded-lg'>
             <div className='border-b border-primary-red sm:text-xl'>{setName}</div>
             <div className='p-1 col-span-1 grid grid-cols-6 gap-1 md:grid-cols-5 md:gap-5 xl:grid-cols-5 xl:gap-10'>
                 {skills?.map((skill : SkillDataType) => (

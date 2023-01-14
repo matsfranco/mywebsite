@@ -20,10 +20,14 @@
     }
 
     .sectionTitle {
-        @apply absolute top-12 uppercase font-semibold tracking-[10px] text-white text-2xl border-b border-primary-red pl-2 pb-1
+        @apply pt-8 pl-2 pb-1 uppercase font-semibold tracking-[10px] text-white text-2xl border-b border-primary-red 
     }
     .sectionSubtitle {
-        @apply absolute mx-2 top-24 text-gray-500 text-sm
+        @apply mx-2 my-2 pb-4 top-24 text-gray-500 text-sm 
+    }
+
+    .blackContentBox {
+        @apply bg-black bg-opacity-30 rounded-lg 
     }
     
     .noselect {

@@ -11,7 +11,7 @@ type Props = {
 function Certifications({ certifications }: Props) {
 
     return (
-        <div className='col-span-1 grid grid-cols-1 gap-2 bg-black bg-opacity-30 px-2 py-1 sm:p-4 rounded-lg'>
+        <div className='m-2 p-1 px-3 sm:p-4 col-span-1 grid grid-cols-1 gap-2 bg-black bg-opacity-30 rounded-lg'>
             <div className='border-b border-primary-red sm:text-xl'>Certificações</div>
             <div>
                 {certifications?.map((certification,i) => (

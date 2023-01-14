@@ -102,37 +102,36 @@ const Home = ({heroInfo, skills, experiences, projects, certifications}: Props) 
   return (
     <>
 
-    <div className='bg-secondary-grey text-white h-screen snap-y snap-mandatory 
-    overflow-x-hidden overflow-y-scroll z-0 scrollbar-thin scrollbar-track-gray-300 scrollbar-thumb-primary-red/80'>
+    <div className='bg-secondary-grey text-white h-screen overflow-x-hidden overflow-y-scroll z-0 scrollbar-thin scrollbar-track-gray-300 scrollbar-thumb-primary-red/80'>
       <Head>
         <title>Mateus Franco</title>
       </Head>
       <Menu />
-      <section id='hero' className='snap-center'>
+      <section id='hero' className=''>
         <Hero heroInfo={heroInfo}/>
       </section>
       
-      <section id='about' className='snap-center'>
+      <section id='about' className=''>
         <About heroInfo={heroInfo} nextSection={aboutFlowControl.next} backSection={aboutFlowControl.back}/>
       </section>
 
-      <section id='skills' className='snap-center'>
+      <section id='skills' className=''>
         <Skills skills={skills} certifications={certifications} nextSection={skillFlowControl.next} backSection={skillFlowControl.back}/>
       </section>
 
-      <section id='experience' className='snap-center'>
+      <section id='experience' className=''>
         <Experiences experiences={professionalExp} nextSection={experienceFlowControl.next} backSection={experienceFlowControl.back}/>
       </section>
 
-      <section id='projects'  className='snap-center'>
+      <section id='projects'  className=''>
         <Projects projects={projects} nextSection={projectsFlowControl.next} backSection={projectsFlowControl.back}/>
       </section>
 
-      <section id='academic' className='snap-center'>
+      <section id='academic' className=''>
         <Education academicExps={academicExp} nextSection={academicFlowControl.next} backSection={academicFlowControl.back}/>
       </section>
 
-      <section id='contact' className='snap-center'>
+      <section id='contact' className=''>
         <LinkTree nextSection={contactFlowControl.next} backSection={contactFlowControl.back}/>
       </section>
 
