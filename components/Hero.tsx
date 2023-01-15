@@ -39,8 +39,8 @@ export default function Hero({ heroInfo }: Props) {
         transition={{
             duration: 1,
         }}
-        className='h-screen flex flex-col space-y-8 items-center justify-start
-            text-center overflow-hidden'>
+        className='flex flex-col space-y-8 items-center justify-start
+            text-center overflow-hidden pb-16'>
         
         <div className='container mx-auto px-10 mb-8 py-8 pb-8 md:pb-16'>
             <div className="border-b w-full inline-block border-primary-red">

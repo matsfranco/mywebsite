@@ -1,11 +1,18 @@
 import Link from 'next/link'
 import { FaLinkedin, FaSalesforce, FaInstagram, FaYoutube, FaTwitter } from 'react-icons/fa';
 import { VscGithubInverted } from 'react-icons/vsc'
+import { RiFeedbackLine } from 'react-icons/ri'
+import { BiCodeBlock } from 'react-icons/bi'
 
-export default function Footer({ }) {
+type Props = {
+  showSocials: boolean;
+}
+
+export default function Footer({ showSocials }: Props) {
   return (
-    <div className='container mx-auto px-3 border-t p-2'>
-        <div className="grid grid-cols-1 place-items-center gap-2">
+    <div className='container mx-auto px-3 border-t border-primary-red p-2'>
+        <div className="grid grid-cols-1 place-items-center gap-2 ">
+            {showSocials &&
             <div className="col-span-1">
                 <div className="grid place-items-center">        
                     <div className="grid grid-cols-3 md:grid-cols-6 gap-6">
@@ -43,11 +50,27 @@ export default function Footer({ }) {
                     </div>
                 </div>
             </div>
+}
             <div className="col-span-1 noselect">
                 <p className="text-white text-sm md:text-lg">Mateus Franco &copy; 2023</p>
             </div>
-            <div className="text-white text-sm hover:text-primary-red noselect">
-              <a href="https://forms.gle/pL4PE6JRuENuksYZ9">Deixe aqui o seu feedback!</a>
+            <div className='h-8 flex items-center transition hover:-translate-y-1 
+                      hover:text-primary-red duration-200 inline-block text-sm text-white cursor-pointer noselect'> 
+                  <RiFeedbackLine color="white" size="1.5em"/>              
+                  <Link href="https://forms.gle/pL4PE6JRuENuksYZ9">
+                    <span className="p-1 text-xs">
+                      Deixe aqui o seu feedback!
+                    </span>
+                  </Link>
+            </div>
+            <div className='h-8 flex items-center transition hover:-translate-y-1 
+                      hover:text-primary-red duration-200 inline-block text-sm text-white cursor-pointer noselect'> 
+                  <BiCodeBlock color="white" size="1.5em"/>              
+                  <Link href= '/built-with'>
+                    <span className="p-1 text-xs">
+                      Saiba mais sobre o site 
+                    </span>
+                  </Link>
             </div>
         </div>
     </div>          

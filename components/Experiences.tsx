@@ -12,30 +12,29 @@ type Props = {
 
 function Experiences({ experiences,nextSection,backSection }: Props) {
   return (
-    <motion.div 
-        initial={{ opacity: 0}}
-        whileInView={{ opacity: 1}}
-        transition={{ duration: 1.0 }}
-        className='h-screen flex relative overflow-hidden flex-col text-center md:flex-row 
-                    max-w-full px-4 justify-evenly mx-auto items-center'
-        >
+    <div className='flex relative flex-col items-center'>
       <h3 className='sectionTitle'>    
-        Experiência
+        Experiências
       </h3>
-      <h3 className='absolute mx-2 top-24 text-gray-500 text-sm'>
+      <h3 className='sectionSubtitle'>
         Clique ou passe o mouse ver mais detalhes
       </h3>
-      <div className='grid grid-cols-1 container justify-center'>
-        <div className="relative pt-12 flex w-full overflow-x-scroll snap-x snap-mandatory scrollbar-thin scrollbar-track-gray-300 scrollbar-thumb-[#E5383B]/80 ">               
-          {experiences?.map((experience, i) => (
-            <TimelineItem key={experience.id} experience={experience} />
-          ))}
+      <motion.div 
+          initial={{ opacity: 0}}
+          whileInView={{ opacity: 1}}
+          transition={{ duration: 1.0 }}
+          className='flex relative overflow-hidden flex-col text-center md:flex-row 
+                      max-w-full px-4 justify-evenly mx-auto items-center'
+          >
+        <div className='grid grid-cols-1 container justify-center'>
+          <div className="relative pt-4 flex w-full overflow-x-scroll snap-x snap-mandatory scrollbar-thin scrollbar-track-gray-300 scrollbar-thumb-[#E5383B]/80 ">               
+            {experiences?.map((experience, i) => (
+              <TimelineItem key={experience.id} experience={experience} />
+            ))}
+          </div>
         </div>
-        <div className='col-span-1 pt-4'>
-          <PageFlowControl next={nextSection} back={backSection}/>
-        </div>
-      </div>
-    </motion.div>
+      </motion.div>
+    </div>
   )
 }
 

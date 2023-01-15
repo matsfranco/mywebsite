@@ -34,6 +34,7 @@ export interface SkillDataType {
     image: {
         url: string;
     };
+    usedInWebsite: boolean;
 }
 
 export interface Experience {
@@ -102,6 +103,7 @@ interface TimeLineItem {
 export interface TitleData {
     title: string;
     subtitle: string;
+    page: string;
 }
 
 export interface Equipment {

@@ -2,6 +2,11 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { HeroInfo, PageFlow } from '../typings'
 import PageFlowControl from './PageFlowControl'
+import { FaRobot } from 'react-icons/fa'
+import { IoIosPlanet } from 'react-icons/io'
+import { MdOutlineDirectionsBike } from 'react-icons/md'
+import { VscRocket } from 'react-icons/vsc'
+import { GiAirplane,GiGrandPiano } from 'react-icons/gi'
 
 type Props = {
     heroInfo: HeroInfo
@@ -12,18 +17,17 @@ type Props = {
 export default function About({ heroInfo,nextSection,backSection }: Props) {
   return (
     
-    <motion.div 
-        initial={{ opacity: 0}}
-        whileInView={{ opacity: 1}}
-        transition={{ duration: 1.5 }}
-        className='flex flex-col relative h-screen text-center 
-            md:text-left md:flex-row max-w-7xl px-10 justify-evenly 
-            mx-auto items-center'
-    >
-        
+    <div className='flex relative flex-col items-center py-12'>
         <h3 className='sectionTitle'>
             Sobre Mim   
         </h3>
+    
+        <motion.div     initial={{ opacity: 0}} 
+                        whileInView={{ opacity: 1}} 
+                        transition={{ duration: 1.5 }}
+                        className='py-2 md:py-12 flex flex-col relative text-center 
+                                    md:text-left md:flex-row max-w-7xl md:px-10 justify-evenly 
+                                    mx-auto items-center'>
             <motion.img
                 initial={{
                     x: -200,
@@ -38,18 +42,35 @@ export default function About({ heroInfo,nextSection,backSection }: Props) {
                 }}
                 viewport={{ once: true }}
                 src={heroInfo.profilePicture.url}
-                className='-mb-24 md:mb-0 flex-shrink-0 w-36 h-36 rounded-full object-cover 
-                    md:rounded-lg md:w-64 md:h-95 md:w-[300px] md:h-[400px]'
+                className='m-2 my-8 flex-shrink-0 w-36 h-36 rounded-lg object-cover md:w-72 md:h-72'
             /> 
             <div className='m-3 p-3 space-y-10  bg-black bg-opacity-30 rounded-lg'>
-                <p className='text-xs font-light md:text-xl m-2'>
+                <p className='text-sm font-light md:text-xl m-2 text-justify'>
                     {heroInfo.backgroundInformation}
                 </p>
-                <div className='col-span-1 pt-4'>
-                    <PageFlowControl next={nextSection} back={backSection}/>
+                <div className='flex flex-row gap-2 md:gap-8 justify-center'>
+                    <div className='border rounded'>
+                        <GiGrandPiano color="white" size="2em"/>
+                    </div>
+                    <div className='border rounded'>
+                        <IoIosPlanet color="white" size="2em"/>
+                    </div>
+                    <div className='border rounded'>
+                        <MdOutlineDirectionsBike color="white" size="2em"/>
+                    </div>
+                    <div className='border rounded'>
+                        <FaRobot color="white" size="2em"/>
+                    </div>
+                    <div className='border rounded'>
+                        <VscRocket color="white" size="2em"/>
+                    </div>
+                    <div className='border rounded'>
+                        <GiAirplane color="white" size="2em"/>
+                    </div >
                 </div>
-                    
             </div>
-    </motion.div>
+        </motion.div>
+    </div>
+
   )
 }
