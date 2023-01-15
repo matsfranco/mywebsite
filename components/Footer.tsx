@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import { FaLinkedin, FaSalesforce, FaInstagram, FaYoutube, FaTwitter } from 'react-icons/fa';
 import { VscGithubInverted } from 'react-icons/vsc'
+import { RiFeedbackLine } from 'react-icons/ri'
+import { BiCodeBlock } from 'react-icons/bi'
 
 type Props = {
   showSocials: boolean;
@@ -52,8 +54,23 @@ export default function Footer({ showSocials }: Props) {
             <div className="col-span-1 noselect">
                 <p className="text-white text-sm md:text-lg">Mateus Franco &copy; 2023</p>
             </div>
-            <div className="text-white text-sm hover:text-primary-red noselect ">
-              <a href="https://forms.gle/pL4PE6JRuENuksYZ9">Deixe aqui o seu feedback!</a>
+            <div className='h-8 flex items-center transition hover:-translate-y-1 
+                      hover:text-primary-red duration-200 inline-block text-sm text-white cursor-pointer noselect'> 
+                  <RiFeedbackLine color="white" size="1.5em"/>              
+                  <Link href="https://forms.gle/pL4PE6JRuENuksYZ9">
+                    <span className="p-1 text-xs">
+                      Deixe aqui o seu feedback!
+                    </span>
+                  </Link>
+            </div>
+            <div className='h-8 flex items-center transition hover:-translate-y-1 
+                      hover:text-primary-red duration-200 inline-block text-sm text-white cursor-pointer noselect'> 
+                  <BiCodeBlock color="white" size="1.5em"/>              
+                  <Link href= '/built-with'>
+                    <span className="p-1 text-xs">
+                      Saiba mais sobre o site 
+                    </span>
+                  </Link>
             </div>
         </div>
     </div>          

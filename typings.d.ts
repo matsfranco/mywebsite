@@ -34,6 +34,7 @@ export interface SkillDataType {
     image: {
         url: string;
     };
+    usedInWebsite: boolean;
 }
 
 export interface Experience {
