@@ -33,11 +33,6 @@ function Education({ academicExps,nextSection,backSection }: Props) {
               <EducationItem key={academicExp.id} experience={academicExp} />
             ))}
           </div>
-          <div>
-            <div className='col-span-1 pt-4'>
-              <PageFlowControl next={nextSection} back={backSection}/>
-            </div>
-          </div>
         </div>
       </motion.div>
     </div>
