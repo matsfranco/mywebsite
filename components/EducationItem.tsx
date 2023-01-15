@@ -32,7 +32,7 @@ const EducationItem = ({ experience } : Props) => {
                             className="rounded-full col-span-1 w-12 h-12 md:w-16 md:h-16 bg-secondary-grey rounded-full border border-primary-red"
                         />
                     </div>
-                    <div className="grid grid-cols-1 content-start">
+                    <div className="grid grid-cols-1 content-start mx-1">
                         <div className="col-span-1 py-1 flex justify-center">
                             <h3 className="text-xl font-semibold text-white transition hover:text-primary-red duration-" >{experience?.jobTitle}</h3>
                         </div>

@@ -18,7 +18,7 @@ type Props = {
 
 const references = [
   { 
-      name: 'Como Eu Programo e Hospedo Sites da Forma Mais Moderna que Existe [GUIA DEFINITIVO]',
+      name: '[Filipe Deschamps] Como Eu Programo e Hospedo Sites...',
       href: 'https://youtu.be/EW7m2WIvFgQ'
   },{ 
       name: 'FlatIcon',
@@ -27,7 +27,7 @@ const references = [
       name: 'Responsive Image gallery in React js',
       href: 'https://youtu.be/cDwa_JwuC-w'
   },{ 
-      name: 'Building an Image Gallery with Next.js, Supabase, and Tailwind CSS',
+      name: 'Building an Image Gallery with Next.js, Supabase, ...',
       href: 'https://youtu.be/BSoRXk1FIw8'
   },{ 
       name: 'React & Tailwind CSS Image Gallery',
@@ -55,18 +55,18 @@ const BuiltWith = ({skills}: Props) => {
       </Head>
       <Header />
       <Menu />
-      <div className='flex relative flex-col items-center pb-8'>
-            <h3 className='sectionTitle'>
+      <div className='flex relative flex-col items-center pb-4'>
+            <h3 className='sectionTitle pt-1'>
                 Sobre o site
             </h3>
-            <h3 className='sectionSubtitle'>
+            <h3 className='sectionSubtitle text-center'>
                 Algumas informações sobre as tecnologias e ferramentas utilizadas na construção deste site
             </h3>
             <motion.div 
                 initial={{ opacity: 0}}
                 whileInView={{ opacity: 1}}
                 transition={{ duration: 1.5 }}
-                className='flex relative flex-col mx-auto text-center md:text-left
+                className='flex relative flex-col mx-auto md:text-left
                 max-w-[2000px] justify-center mx-auto items-center
                 xl:flex-row xl:px-10 xl:space-y-0 noselect'
             >
